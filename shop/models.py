@@ -1,3 +1,101 @@
 from django.db import models
+from tinymce import HTMLField
+import hashlib
+from django.utils.text import slugify
+from django.contrib.auth.models import User
+from django.db.models.query import QuerySet
+
 
 # Create your models here.
+
+
+class Tag(models.Model):
+    titre = models.CharField(max_length=255, unique=True)
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Tag"
+        verbose_name_plural = "Tags"
+
+    def __str__(self) -> str:
+        return str(self.titre)
+
+
+class Categorie(models.Model):
+    titre = models.CharField(max_length=255, unique=True)
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Categorie"
+        verbose_name_plural = "Categories"
+
+    def __str__(self) -> str:
+        return str(self.titre)
+
+
+
+class Produit(models.Model):
+
+
+    # TODO: Define fields here
+    titre = models.CharField(max_length=50)
+    titre_slug = models.SlugField(editable=False, null=True, max_length=255)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
+    pays_origine = models.CharField(max_length=50)
+    description = HTMLField('shop/description')
+    old_prix = models.FloatField()
+    new_prix = models.FloatField()
+
+
+    cover = models.ImageField(upload_to='shop/images')
+    img1 = models.ImageField(upload_to='shop/images')
+    img2 = models.ImageField(upload_to='shop/images')
+    img3 = models.ImageField(upload_to='shop/images')
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Produit'
+        verbose_name_plural = 'Produits'
+
+    def __str__(self):
+
+        return str(self.titre)
+
+    def save(self, *args, **kwargs):
+        super(Produit, self).save(*args, **kwargs)
+        encoding_id = hashlib.md5(str(self.id).encode())
+        self.titre_slug = slugify(str(self.titre) + ' ' + str(encoding_id.hexdigest()))
+        super(Produit, self).save(*args, **kwargs)
+
+
+class Review(models.Model):
+
+    titre = models.CharField(max_length=50)
+    nom = models.CharField(max_length=50)
+    email = models.EmailField(max_length=254)
+    review = models.TextField()
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+
+
+        verbose_name = 'Review'
+        verbose_name_plural = 'Reviews'
+
+    def __str__(self):
+
+        return self.titre
+
