@@ -14,7 +14,7 @@ class Background(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     cover = models.ImageField(upload_to='back')
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -31,7 +31,7 @@ class Taffich(models.Model):
     description = HTMLField('shop/descripion')
     cover = models.ImageField(upload_to='blog')
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -46,7 +46,7 @@ class Taffich(models.Model):
 class Quality(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -62,7 +62,7 @@ class Chiffre(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
 
     nombre = models.IntegerField()
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -81,7 +81,7 @@ class Feedback(models.Model):
     nom = models.CharField(max_length=255, null=True, blank=True)
     cover = models.ImageField(upload_to='start')
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -97,7 +97,7 @@ class Avantages(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     recit = models.CharField(max_length=255, null=True, blank=True)
     nombre = models.IntegerField()
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -112,7 +112,7 @@ class Avantages(models.Model):
 class Title(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -131,7 +131,7 @@ class Team(models.Model):
     nom = models.CharField(max_length=255, null=True, blank=True)
     cover = models.ImageField(upload_to='start')
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -149,7 +149,7 @@ class Gallery(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     cover = models.ImageField(upload_to='start')
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -167,7 +167,7 @@ class Faq(models.Model):
     questions = models.CharField(max_length=255, null=True, blank=True)
     reponses = models.CharField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -176,7 +176,7 @@ class Faq(models.Model):
         verbose_name_plural = "Faqs"
 
     def __str__(self) -> str:
-        return str(self.status)
+        return str(self.statut)
 
 
 class Formfaq(models.Model):
@@ -186,7 +186,7 @@ class Formfaq(models.Model):
     tel = models.CharField(max_length=255, null=True, blank=True)
     message = models.TextField()
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -205,7 +205,7 @@ class Services(models.Model):
     description = HTMLField('start/description')
     cover = models.ImageField(upload_to='start/services')
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -223,7 +223,7 @@ class Adresse(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     adress = models.CharField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -236,7 +236,7 @@ class Mail(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -249,7 +249,7 @@ class Call(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     tel = models.CharField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
