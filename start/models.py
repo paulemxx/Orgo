@@ -7,10 +7,10 @@ from django.db.models.query import QuerySet
 from shop.models import Produit
 from blog.models import Article
 
-#TODO : About us
+
+# TODO : About us
 
 class Background(models.Model):
-
     titre = models.CharField(max_length=255, null=True, blank=True)
     cover = models.ImageField(upload_to='back')
 
@@ -27,7 +27,6 @@ class Background(models.Model):
 
 
 class Taffich(models.Model):
-
     titre = models.CharField(max_length=255, null=True, blank=True)
     description = HTMLField('shop/descripion')
     cover = models.ImageField(upload_to='blog')
@@ -74,6 +73,7 @@ class Chiffre(models.Model):
     def __str__(self) -> str:
         return str(self.titre)
 
+
 class Feedback(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     description = HTMLField('start/description')
@@ -92,6 +92,7 @@ class Feedback(models.Model):
     def __str__(self) -> str:
         return str(self.titre)
 
+
 class Avantages(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     recit = models.CharField(max_length=255, null=True, blank=True)
@@ -107,9 +108,9 @@ class Avantages(models.Model):
     def __str__(self) -> str:
         return str(self.titre)
 
+
 class Title(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
-
 
     status = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
@@ -122,10 +123,10 @@ class Title(models.Model):
     def __str__(self) -> str:
         return str(self.titre)
 
-#TODO : Teams
+
+# TODO : Teams
 
 class Team(models.Model):
-
     metier = models.CharField(max_length=255, null=True, blank=True)
     nom = models.CharField(max_length=255, null=True, blank=True)
     cover = models.ImageField(upload_to='start')
@@ -141,10 +142,10 @@ class Team(models.Model):
     def __str__(self) -> str:
         return str(self.metier)
 
-#TODO : Gallery
+
+# TODO : Gallery
 
 class Gallery(models.Model):
-
     titre = models.CharField(max_length=255, null=True, blank=True)
     cover = models.ImageField(upload_to='start')
 
@@ -159,10 +160,10 @@ class Gallery(models.Model):
     def __str__(self) -> str:
         return str(self.titre)
 
-#TODO : Faq
+
+# TODO : Faq
 
 class Faq(models.Model):
-
     questions = models.CharField(max_length=255, null=True, blank=True)
     reponses = models.CharField(max_length=255, null=True, blank=True)
 
@@ -179,7 +180,6 @@ class Faq(models.Model):
 
 
 class Formfaq(models.Model):
-
     nom = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField(max_length=255, null=True, blank=True)
     sujet = models.CharField(max_length=255, null=True, blank=True)
@@ -197,10 +197,10 @@ class Formfaq(models.Model):
     def __str__(self) -> str:
         return str(self.nom)
 
-#TODO : Services
+
+# TODO : Services
 
 class Services(models.Model):
-
     titre = models.CharField(max_length=255, null=True, blank=True)
     description = HTMLField('start/description')
     cover = models.ImageField(upload_to='start/services')
@@ -216,10 +216,10 @@ class Services(models.Model):
     def __str__(self) -> str:
         return str(self.titre)
 
-#TODO : Contact
+
+# TODO : Contact
 
 class Adresse(models.Model):
-
     titre = models.CharField(max_length=255, null=True, blank=True)
     adress = models.CharField(max_length=255, null=True, blank=True)
 
@@ -231,8 +231,8 @@ class Adresse(models.Model):
         verbose_name = "Adresse"
         verbose_name_plural = "Adresses"
 
-class Mail(models.Model):
 
+class Mail(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField(max_length=255, null=True, blank=True)
 
@@ -246,7 +246,6 @@ class Mail(models.Model):
 
 
 class Call(models.Model):
-
     titre = models.CharField(max_length=255, null=True, blank=True)
     tel = models.CharField(max_length=255, null=True, blank=True)
 
