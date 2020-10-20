@@ -9,12 +9,12 @@ from django.utils.safestring import mark_safe
 class TagAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
-        'status',
+        'statut',
         'date_add',
         'date_update'
     )
     list_filter = (
-        'status',
+        'statut',
         'date_add',
         'date_update',
     )
@@ -26,19 +26,19 @@ class TagAdmin(admin.ModelAdmin):
 
     fieldsets = [
         ('Info ', {'fields': ['titre', ]}),
-        ('Status et Activations', {'fields': ['status', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
 
 class CategorieAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
-        'status',
+        'statut',
         'date_add',
         'date_update'
     )
     list_filter = (
-        'status',
+        'statut',
         'date_add',
         'date_update',
     )
@@ -50,7 +50,7 @@ class CategorieAdmin(admin.ModelAdmin):
 
     fieldsets = [
         ('Info ', {'fields': ['titre', ]}),
-        ('Status et Activations', {'fields': ['status', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
 
@@ -66,13 +66,13 @@ class ProduitAdmin(admin.ModelAdmin):
         'tag',
         'old_prix',
         'new_prix',
-        'status',
+        'statut',
         'date_add',
         'date_update'
     )
     list_filter = (
         'categorie',
-        'status',
+        'statut',
         'tag'
     )
     search_fields = (
@@ -95,7 +95,7 @@ class ProduitAdmin(admin.ModelAdmin):
         }),
         ('Image', {'fields': ['cover', 'affiche_image', 'img1', 'affiche_image1', 'img2', 'affiche_image2', 'img3',
                               'affiche_image3', 'video', 'affiche_vid', ]}),
-        ('Status et Activations', {'fields': ['status', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
     def affiche_image(self, obj):
@@ -117,8 +117,8 @@ class ProduitAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
 
 
-    list_display = ('name', 'status', 'date_add', 'date_update',)
-    list_filter = ('name', 'status', 'date_add',)
+    list_display = ('name', 'statut', 'date_add', 'date_update',)
+    list_filter = ('name', 'statut', 'date_add',)
     search_fields = ('name',)
     date_hierarchy = 'date_add'
     fieldsets = (
@@ -128,7 +128,7 @@ class ReviewAdmin(admin.ModelAdmin):
 
             ,
         }),
-        ('Status et Activations', {'fields': ['status', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
     )
 
 
