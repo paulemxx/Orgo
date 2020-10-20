@@ -121,3 +121,23 @@ class Title(models.Model):
 
     def __str__(self) -> str:
         return str(self.titre)
+
+#TODO : Teams
+
+class Team(models.Model):
+
+    metier = models.CharField(max_length=255, null=True, blank=True)
+    nom = models.CharField(max_length=255, null=True, blank=True)
+    cover = models.ImageField(upload_to='start')
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Team"
+        verbose_name_plural = "Teams"
+
+    def __str__(self) -> str:
+        return str(self.metier)
+
