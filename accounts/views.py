@@ -23,10 +23,9 @@ def register(request: HttpRequest) -> HttpResponse:
             logins(request, user)
             return redirect('accounts:dashboard')
     else:
-        data = {
+        form = RegisterForm()
 
-        }
-    return render(request, 'pages/accounts/register.html', mergeData(request, data))
+    return render(request, 'pages/accounts/register.html', {'form': form})
 
 
 def logins(request: HttpRequest) -> HttpResponse:
