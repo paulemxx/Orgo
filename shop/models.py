@@ -42,22 +42,17 @@ class Categorie(models.Model):
 
 class Produit(models.Model):
 
-
-    # TODO: Define fields here
     titre = models.CharField(max_length=50)
     titre_slug = models.SlugField(editable=False, null=True, max_length=255)
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
     categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
-    pays_origine = models.CharField(max_length=50)
     description = HTMLField('shop/description')
     old_prix = models.FloatField()
     new_prix = models.FloatField()
 
 
     cover = models.ImageField(upload_to='shop/images')
-    img1 = models.ImageField(upload_to='shop/images')
-    img2 = models.ImageField(upload_to='shop/images')
-    img3 = models.ImageField(upload_to='shop/images')
+
 
     statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)

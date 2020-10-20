@@ -58,9 +58,7 @@ class ProduitAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
         'affiche_image',
-        'affiche_image1',
-        'affiche_image2',
-        'affiche_image3',
+
 
         'categorie',
         'tag',
@@ -80,7 +78,7 @@ class ProduitAdmin(admin.ModelAdmin):
     )
     list_per_pages = 50
     date_hierarchy = 'date_add'
-    readonly_fields = ['affiche_image', 'affiche_image1', 'affiche_image2', 'affiche_image3', 'affiche_vid']
+    readonly_fields = ['affiche_image']
 
     fieldsets = [
         ('Info ', {'fields': [
@@ -93,38 +91,26 @@ class ProduitAdmin(admin.ModelAdmin):
 
         ]
         }),
-        ('Image', {'fields': ['cover', 'affiche_image', 'img1', 'affiche_image1', 'img2', 'affiche_image2', 'img3',
-                              'affiche_image3', 'video', 'affiche_vid', ]}),
+        ('Image', {'fields': ['cover', 'affiche_image',]}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
     def affiche_image(self, obj):
         return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
 
-    def affiche_image1(self, obj):
-        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.img1.url))
-
-    def affiche_image2(self, obj):
-        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.img2.url))
-
-    def affiche_image3(self, obj):
-        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.img3.url))
-
-    def affiche_vid(self, obj):
-        return mark_safe('<source src="{url}" width="100px" height="50px" />'.format(url=obj.video.url))
 
 
 class ReviewAdmin(admin.ModelAdmin):
 
 
-    list_display = ('name', 'statut', 'date_add', 'date_update',)
+    list_display = ('titre', 'nom', 'email', 'review', 'statut', 'date_add', 'date_update',)
     list_filter = ('name', 'statut', 'date_add',)
     search_fields = ('name',)
     date_hierarchy = 'date_add'
     fieldsets = (
         ('Info', {
             'fields': [
-                'name', 'email', 'review']
+                'titre', 'nom',  'email', 'review']
 
             ,
         }),
