@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
-from django.http.response import HttpResponse, JsonResponse
+from django.http.response import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.http.request import HttpRequest
 from . import models
 from siteConfig.datamanager import mergeData
@@ -27,7 +27,7 @@ def register(request: HttpRequest) -> HttpResponse:
 
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('accounts:dashboard')
+            return redirect('accounts:login')
     else:
         form = RegisterForm()
 
@@ -35,9 +35,24 @@ def register(request: HttpRequest) -> HttpResponse:
 
 
 def logins(request: HttpRequest) -> HttpResponse:
-    data = {
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user:
+            if user.is_active:
+                login(request, user)
+                return redirect('accounts:dashboard')
+            else:
+                return HttpResponse("Your account was inactive.")
+        else:
+            print("Someone tried to login and failed.")
+            print("They used username: {} and password: {}".format(username, password))
+            return HttpResponse("Invalid login details given")
+    else:
+        data = {
 
-    }
+        }
     return render(request, 'pages/accounts/login.html', mergeData(request, data))
 
 
