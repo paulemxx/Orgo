@@ -176,6 +176,7 @@ class AvantageAdmin(admin.ModelAdmin):
 class TitleAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
+        'description',
 
         'statut',
         'date_add',
@@ -193,7 +194,7 @@ class TitleAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_add'
 
     fieldsets = [
-        ('Info ', {'fields': ['titre', ]}),
+        ('Info ', {'fields': ['titre', 'description',]}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
