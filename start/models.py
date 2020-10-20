@@ -159,3 +159,40 @@ class Gallery(models.Model):
     def __str__(self) -> str:
         return str(self.titre)
 
+#TODO : Faq
+
+class Faq(models.Model):
+
+    questions = models.CharField(max_length=255, null=True, blank=True)
+    reponses = models.CharField(max_length=255, null=True, blank=True)
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Faq"
+        verbose_name_plural = "Faqs"
+
+    def __str__(self) -> str:
+        return str(self.status)
+
+
+class Formfaq(models.Model):
+
+    nom = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(max_length=255, null=True, blank=True)
+    sujet = models.CharField(max_length=255, null=True, blank=True)
+    tel = models.CharField(max_length=255, null=True, blank=True)
+    message = models.TextField()
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Formfaq"
+        verbose_name_plural = "Formfaqs"
+
+    def __str__(self) -> str:
+        return str(self.nom)
