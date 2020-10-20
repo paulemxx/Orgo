@@ -21,7 +21,7 @@ def register(request: HttpRequest) -> HttpResponse:
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             logins(request, user)
-            return redirect('start:index')
+            return redirect('accounts:dashboard')
     else:
         data = {
 
