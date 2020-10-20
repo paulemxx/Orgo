@@ -27,7 +27,7 @@ def product(request: HttpRequest, titre_slug: str) -> HttpResponse:
         'prod': models.Produit.objects.filter(status=True).order_by('-date_add')[:4],
 
     }
-    return render(request, 'pages/shop/product.html', data)
+    return render(request, 'pages/shop/shop_details.html', data)
 
 
 
