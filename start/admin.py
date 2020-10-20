@@ -31,6 +31,9 @@ class BackgroundAdmin(admin.ModelAdmin):
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
+    def affiche_image(self, obj):
+        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
+
 
 class TaffichAdmin(admin.ModelAdmin):
     list_display = (
@@ -58,6 +61,9 @@ class TaffichAdmin(admin.ModelAdmin):
         ('Image', {'fields': ['cover', 'affiche_image', ]}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
+
+    def affiche_image(self, obj):
+        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
 
 
 class QualityAdmin(admin.ModelAdmin):
@@ -217,6 +223,9 @@ class TeamAdmin(admin.ModelAdmin):
         ('Image', {'fields': ['cover', 'affiche_image', ]}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
+    def affiche_image(self, obj):
+        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
+
 
 # TODO : Gallery
 
@@ -246,6 +255,9 @@ class GalleryAdmin(admin.ModelAdmin):
         ('Image', {'fields': ['cover', 'affiche_image', ]}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
+
+    def affiche_image(self, obj):
+        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
 
 # TODO : Faq
 
@@ -333,6 +345,9 @@ class ServicesAdmin(admin.ModelAdmin):
         ('Image', {'fields': ['cover', 'affiche_image', ]}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
+
+    def affiche_image(self, obj):
+        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
 
 # TODO : Contact
 
