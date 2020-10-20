@@ -104,7 +104,7 @@ class ReviewAdmin(admin.ModelAdmin):
 
 
     list_display = ('titre', 'nom', 'email', 'review', 'statut', 'date_add', 'date_update',)
-    list_filter = ('name', 'statut', 'date_add',)
+    list_filter = ('nom', 'statut', 'date_add',)
     search_fields = ('name',)
     date_hierarchy = 'date_add'
     fieldsets = (
