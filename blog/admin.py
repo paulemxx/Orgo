@@ -8,12 +8,12 @@ from django.utils.safestring import mark_safe
 class TagAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
-        'status',
+        'statut',
         'date_add',
         'date_update'
     )
     list_filter = (
-        'status',
+        'statut',
         'date_add',
         'date_update',
     )
@@ -25,19 +25,19 @@ class TagAdmin(admin.ModelAdmin):
 
     fieldsets = [
         ('Info ', {'fields': ['titre', ]}),
-        ('Status et Activations', {'fields': ['status', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
 
 class CategorieAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
-        'status',
+        'statut',
         'date_add',
         'date_update'
     )
     list_filter = (
-        'status',
+        'statut',
         'date_add',
         'date_update',
     )
@@ -49,7 +49,7 @@ class CategorieAdmin(admin.ModelAdmin):
 
     fieldsets = [
         ('Info ', {'fields': ['titre', ]}),
-        ('Status et Activations', {'fields': ['status', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
 
@@ -65,14 +65,14 @@ class CommentaireAdmin(admin.ModelAdmin):
         'email',
         'message',
         'affiche_image',
-        'status',
+        'statut',
         'date_add',
         'date_update'
     )
 
     list_filter = (
         'article',
-        'status',
+        'statut',
         'date_add',
         'date_update'
     )
@@ -88,7 +88,7 @@ class CommentaireAdmin(admin.ModelAdmin):
             'cover',
             'affiche_image'
         ]}),
-        ('Status et Activations', {'fields': ['status', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
 
@@ -97,13 +97,13 @@ class ArticleAdmin(admin.ModelAdmin):
         'auteur',
         'titre',
         'affiche_image',
-        'status',
+        'statut',
         'date_add',
         'date_update'
     )
     list_filter = (
         'categorie',
-        'status',
+        'statut',
         'tags'
     )
     search_fields = (
@@ -124,7 +124,7 @@ class ArticleAdmin(admin.ModelAdmin):
         ]
         }),
         ('Image', {'fields': ['cover', 'affiche_image']}),
-        ('Status et Activations', {'fields': ['status', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
     def affiche_image(self, obj):
