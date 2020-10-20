@@ -14,7 +14,7 @@ from django.db.models.query import QuerySet
 class Tag(models.Model):
     titre = models.CharField(max_length=255, unique=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -29,7 +29,7 @@ class Tag(models.Model):
 class Categorie(models.Model):
     titre = models.CharField(max_length=255, unique=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -42,7 +42,7 @@ class Categorie(models.Model):
 
     @property
     def getArticles(self) -> QuerySet:
-        return self.articles.filter(status=True)
+        return self.articles.filter(statut=True)
 
 
 class Article(models.Model):
@@ -56,7 +56,7 @@ class Article(models.Model):
     categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE, related_name='articles')
 
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -75,15 +75,15 @@ class Article(models.Model):
 
     @property
     def getCategories(self) -> QuerySet:
-        return self.categories.filter(status=True)
+        return self.categories.filter(statut=True)
 
     @property
     def getTags(self) -> QuerySet:
-        return self.tags.filter(status=True)
+        return self.tags.filter(statut=True)
 
     @property
     def getCommentaires(self) -> QuerySet:
-        return self.commentaires.filter(status=True).order_by('-date_add')
+        return self.commentaires.filter(statut=True).order_by('-date_add')
 
     @property
     def countCommentaires(self):
@@ -97,7 +97,7 @@ class Commentaire(models.Model):
     message = models.TextField()
     cover = models.ImageField(upload_to='blog')
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
