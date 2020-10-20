@@ -196,3 +196,23 @@ class Formfaq(models.Model):
 
     def __str__(self) -> str:
         return str(self.nom)
+
+#TODO : Services
+
+class Services(models.Model):
+
+    titre = models.CharField(max_length=255, null=True, blank=True)
+    description = HTMLField('start/description')
+    cover = models.ImageField(upload_to='start/services')
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Services"
+        verbose_name_plural = "Services"
+
+    def __str__(self) -> str:
+        return str(self.titre)
+
