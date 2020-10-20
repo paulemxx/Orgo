@@ -21,7 +21,7 @@ def register(request: HttpRequest) -> HttpResponse:
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             logins(request, user)
-            return redirect('home')
+            return redirect('start:index')
     else:
         data = {
 

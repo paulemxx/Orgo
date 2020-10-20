@@ -29,7 +29,8 @@
                 <div class="register-form">
                     <h2>Register</h2>
 
-                    <form>
+                    <form method="post" >
+                        {% csrf_token %}
                         <div class="form-group">
                             <label>Username</label>
                             <input type="text" name="username" class="form-control" placeholder="Username">
