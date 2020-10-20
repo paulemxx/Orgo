@@ -14,7 +14,7 @@ class Adresse(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     adress = models.CharField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -27,7 +27,7 @@ class Mail(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -40,7 +40,7 @@ class Call(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     tel = models.CharField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -54,7 +54,7 @@ class Call(models.Model):
 class Lien(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
