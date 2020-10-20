@@ -5,11 +5,11 @@ from django.http.request import HttpRequest
 from . import models
 from siteConfig.datamanager import mergeData
 
+
 # Create your views here.
 
 def register(request: HttpRequest) -> HttpResponse:
     data = {
-
 
     }
     return render(request, 'pages/accounts/register.html', mergeData(request, data))
