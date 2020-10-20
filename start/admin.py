@@ -175,6 +175,7 @@ class AvantageAdmin(admin.ModelAdmin):
 
 class TitleAdmin(admin.ModelAdmin):
     list_display = (
+
         'titre',
         'description',
 
