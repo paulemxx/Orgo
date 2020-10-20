@@ -1,11 +1,14 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
 from . import views
 
-app_name = 'blog'
+
+app_name = 'accounts'
 
 urlpatterns = [
 
-    path('', views.blog, name='index'),
-    path('blog/<slug:titre_slug>', views.single_blog, name='single_blog'),
+    path('', views.register, name='register'),
+    path('', views.login, name='login'),
+
 
     ]
