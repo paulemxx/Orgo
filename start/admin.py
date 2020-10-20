@@ -153,7 +153,6 @@ class AvantageAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
         'recit',
-        'nombre',
         'statut',
         'date_add',
         'date_update'
@@ -170,7 +169,7 @@ class AvantageAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_add'
 
     fieldsets = [
-        ('Info ', {'fields': ['titre',  'recit', 'nombre',]}),
+        ('Info ', {'fields': ['titre',  'recit']}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
