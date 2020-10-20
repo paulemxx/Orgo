@@ -141,3 +141,21 @@ class Team(models.Model):
     def __str__(self) -> str:
         return str(self.metier)
 
+#TODO : Gallery
+
+class Gallery(models.Model):
+
+    titre = models.CharField(max_length=255, null=True, blank=True)
+    cover = models.ImageField(upload_to='start')
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Gallery"
+        verbose_name_plural = "Gallery"
+
+    def __str__(self) -> str:
+        return str(self.titre)
+
