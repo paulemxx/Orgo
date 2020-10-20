@@ -93,7 +93,7 @@ class Feedback(models.Model):
         return str(self.titre)
 
 
-class Avantages(models.Model):
+class Avantage(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     recit = models.CharField(max_length=255, null=True, blank=True)
     nombre = models.IntegerField()
