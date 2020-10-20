@@ -8,7 +8,6 @@ from shop.models import Produit
 from blog.models import Article
 
 
-
 # TODO : Contact
 
 class Adresse(models.Model):
@@ -48,3 +47,20 @@ class Call(models.Model):
     class Meta:
         verbose_name = "Call"
         verbose_name_plural = "Calls"
+
+
+# TODO : Liens
+
+class Lien(models.Model):
+    titre = models.CharField(max_length=255, null=True, blank=True)
+
+    status = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Lien"
+        verbose_name_plural = "Liens"
+
+    def __str__(self) -> str:
+        return str(self.titre)
