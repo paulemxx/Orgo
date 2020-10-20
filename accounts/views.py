@@ -23,9 +23,10 @@ def register(request: HttpRequest) -> HttpResponse:
             user.profile.email = form.cleaned_data.get('email')
             user.save()
             username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
+            raw_password = form.cleaned_data.get('password')
+
             user = authenticate(username=username, password=raw_password)
-            logins(request, user)
+            login(request, user)
             return redirect('accounts:dashboard')
     else:
         form = RegisterForm()

@@ -9,10 +9,10 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
     email = models.EmailField(max_length=150)
-    bio = models.TextField()
+
 
     def __str__(self):
-        return self.user.username
+        return self.user.first_name
 
 
 @receiver(post_save, sender=User)
