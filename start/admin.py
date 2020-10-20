@@ -8,7 +8,7 @@ from django.utils.safestring import mark_safe
 class BackgroundAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
-        'affiche_image'
+        'affiche_image',
         'statut',
         'date_add',
         'date_update'
@@ -23,7 +23,7 @@ class BackgroundAdmin(admin.ModelAdmin):
     )
     list_per_pages = 50
     date_hierarchy = 'date_add'
-    readonly_fields = ['affiche_image']
+    readonly_fields = ['affiche_image',]
 
     fieldsets = [
         ('Info ', {'fields': ['titre',]}),
@@ -36,7 +36,7 @@ class TaffichAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
         'description',
-        'affiche_image'
+        'affiche_image',
         'statut',
         'date_add',
         'date_update'
@@ -195,7 +195,7 @@ class TeamAdmin(admin.ModelAdmin):
 
         'metier',
         'nom',
-        'affiche_image'
+        'affiche_image',
         'statut',
         'date_add',
         'date_update'
@@ -224,7 +224,7 @@ class GalleryAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
 
-        'affiche_image'
+        'affiche_image',
         'statut',
         'date_add',
         'date_update'
@@ -277,7 +277,7 @@ class FaqAdmin(admin.ModelAdmin):
 
 class FormfaqAdmin(admin.ModelAdmin):
     list_display = (
-        'nom'
+        'nom',
         'email',
         'sujet',
         'tel',
@@ -311,7 +311,7 @@ class ServicesAdmin(admin.ModelAdmin):
         'titre',
         'description',
 
-        'affiche_image'
+        'affiche_image',
         'statut',
         'date_add',
         'date_update'
