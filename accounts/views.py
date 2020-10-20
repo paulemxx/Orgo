@@ -19,7 +19,7 @@ def register(request: HttpRequest) -> HttpResponse:
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            login(request, user)
+            logins(request, user)
             return redirect('home')
     else:
         data = {
@@ -28,7 +28,7 @@ def register(request: HttpRequest) -> HttpResponse:
     return render(request, 'pages/accounts/register.html', mergeData(request, data))
 
 
-def login(request: HttpRequest) -> HttpResponse:
+def logins(request: HttpRequest) -> HttpResponse:
     data = {
 
     }
