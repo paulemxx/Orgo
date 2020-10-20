@@ -12,7 +12,7 @@ from django.db.models.query import QuerySet
 class Tag(models.Model):
     titre = models.CharField(max_length=255, unique=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -27,7 +27,7 @@ class Tag(models.Model):
 class Categorie(models.Model):
     titre = models.CharField(max_length=255, unique=True)
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -59,7 +59,7 @@ class Produit(models.Model):
     img2 = models.ImageField(upload_to='shop/images')
     img3 = models.ImageField(upload_to='shop/images')
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
@@ -85,7 +85,7 @@ class Review(models.Model):
     email = models.EmailField(max_length=254)
     review = models.TextField()
 
-    status = models.BooleanField(default=True)
+    statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
