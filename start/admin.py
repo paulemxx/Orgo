@@ -447,6 +447,6 @@ _register(models.Services, ServicesAdmin)
 _register(models.Adresse, AdresseAdmin)
 _register(models.Mail, MailAdmin)
 _register(models.Call, CallAdmin)
-
+_register(models.Feedback, FeedbackAdmin)
 
 
