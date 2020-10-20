@@ -100,7 +100,7 @@
                     <div class="main-responsive-menu">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="{% static 'assets/img/logo.png" alt="image">
+                                <img src="{% static 'assets/img/logo.png' %}" alt="image">
                             </a>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="index.html">
-                            <img src="{% static 'assets/img/logo.png" alt="image">
+                            <img src="{% static 'assets/img/logo.png' %}" alt="image">
                         </a>
 
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -434,6 +434,118 @@
         </div>
         <!-- End Navbar Area -->
 
+         <!-- Sidebar Modal -->
+        <div class="sidebar-modal">
+            <div class="sidebar-modal-inner">
+                <div class="sidebar-about-area">
+                    <div class="title">
+                        <h2>About Us</h2>
+                        <p>We believe brand interaction is key in communication. Real innovations and a positive customer experience are the heart of successful communication. No fake products and services. The customer is king, their lives and needs are the inspiration.</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-instagram-feed">
+                    <h2>Instagram</h2>
+                    <ul>
+                        <li>
+							<a href="#">
+								<img src="{% static 'assets/img/instagram/instagram1.jpg" alt="image">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'assets/img/instagram/instagram2.jpg' %}" alt="image">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'assets/img/instagram/instagram3.jpg' %}" alt="image">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'assets/img/instagram/instagram4.jpg' %}" alt="image">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'assets/img/instagram/instagram5.jpg' %}" alt="image">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'assets/img/instagram/instagram6.jpg' %}" alt="image">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'assets/img/instagram/instagram7.jpg' %}" alt="image">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{% static 'assets/img/instagram/instagram8.jpg' %}" alt="image">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-contact-area">
+                    <div class="contact-info">
+                        <div class="contact-info-content">
+                            <h2>
+                                <a href="tel:+0881306298615">
+                                    +088 130 629 8615
+                                </a>
+                                <span>OR</span>
+                                <a href="mailto:orgo@gmail.com">
+                                    orgo@gmail.com
+                                </a>
+                            </h2>
+
+                            <ul class="social">
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-facebook'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-twitter'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-instagram'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-linkedin'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-pinterest-alt'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-youtube'></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="close-btn sidebar-modal-close-btn">
+                    <i class="flaticon-cancel"></i>
+                </span>
+            </div>
+        </div>
+        <!-- End Sidebar Modal -->
+
         {% block content %}
 
         {% endblock %}
@@ -450,7 +562,7 @@
                 <div class="testimonial-slider owl-carousel owl-theme">
                     <div class="testimonial-item">
                         <div class="info">
-                            <img src="{% static 'assets/img/client/client-1.jpg" alt="image">
+                            <img src="{% static 'assets/img/client/client-1.jpg' %}" alt="image">
                             <h3>Ken Morris</h3>
                             <span>Organic Farmer</span>
                         </div>
@@ -463,7 +575,7 @@
 
                     <div class="testimonial-item">
                         <div class="info">
-                            <img src="{% static 'assets/img/client/client-2.jpg" alt="image">
+                            <img src="{% static 'assets/img/client/client-2.jpg' %}" alt="image">
                             <h3>Johansen Lisa</h3>
                             <span>Organic Farmer</span>
                         </div>
@@ -476,7 +588,7 @@
 
                     <div class="testimonial-item">
                         <div class="info">
-                            <img src="{% static 'assets/img/client/client-3.jpg" alt="image">
+                            <img src="{% static 'assets/img/client/client-3.jpg' %}" alt="image">
                             <h3>Lodi Kheda</h3>
                             <span>Organic Farmer</span>
                         </div>
@@ -502,7 +614,7 @@
                 <div class="top-products-slider owl-carousel owl-theme">
                     <div class="top-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-1.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-1.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -545,7 +657,7 @@
 
                     <div class="top-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-2.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-2.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -588,7 +700,7 @@
 
                     <div class="top-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-3.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-3.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -631,7 +743,7 @@
 
                     <div class="top-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-4.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-4.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -674,7 +786,7 @@
 
                     <div class="top-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-5.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-5.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -717,7 +829,7 @@
 
                     <div class="top-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-6.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-6.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -760,7 +872,7 @@
 
                     <div class="top-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-7.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-7.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -803,7 +915,7 @@
 
                     <div class="top-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-8.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/top-products/top-products-8.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -886,7 +998,7 @@
                 <div class="featured-products-slider owl-carousel owl-theme">
                     <div class="featured-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-1.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-1.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -929,7 +1041,7 @@
 
                     <div class="featured-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-2.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-2.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -972,7 +1084,7 @@
 
                     <div class="featured-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-3.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-3.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -1015,7 +1127,7 @@
 
                     <div class="featured-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-4.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-4.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -1058,7 +1170,7 @@
 
                     <div class="featured-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-5.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-5.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -1101,7 +1213,7 @@
 
                     <div class="featured-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-6.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-6.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -1144,7 +1256,7 @@
 
                     <div class="featured-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-7.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-7.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -1187,7 +1299,7 @@
 
                     <div class="featured-products-item">
                         <div class="products-image">
-                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-8.jpg" alt="image"></a>
+                            <a href="shop-details.html"><img src="{% static 'assets/img/featured-products/featured-products-8.jpg' %}" alt="image"></a>
 
                             <ul class="products-action">
                                 <li>
@@ -1244,7 +1356,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-blog-item">
                             <div class="image">
-                                <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-1.jpg" alt="image"></a>
+                                <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-1.jpg' %}" alt="image"></a>
                                 
                                 <div class="date">
                                     <span>20 December 2020</span>
@@ -1262,7 +1374,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-blog-item">
                             <div class="image">
-                                <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-2.jpg" alt="image"></a>
+                                <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-2.jpg' %}" alt="image"></a>
                                 
                                 <div class="date">
                                     <span>24 December 2020</span>
@@ -1280,7 +1392,7 @@
                     <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
                         <div class="single-blog-item">
                             <div class="image">
-                                <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-3.jpg" alt="image"></a>
+                                <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-3.jpg' %}" alt="image"></a>
                                 
                                 <div class="date">
                                     <span>29 December 2020</span>
@@ -1329,23 +1441,23 @@
             <div class="container">
                 <div class="partner-slider owl-carousel owl-theme">
                     <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-1.png" alt="image">
+                        <img src="{% static 'assets/img/partner/partner-1.png' %}" alt="image">
                     </div>
 
                     <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-2.png" alt="image">
+                        <img src="{% static 'assets/img/partner/partner-2.png' %}" alt="image">
                     </div>
 
                     <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-3.png" alt="image">
+                        <img src="{% static 'assets/img/partner/partner-3.png' %}" alt="image">
                     </div>
 
                     <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-4.png" alt="image">
+                        <img src="{% static 'assets/img/partner/partner-4.png' %}" alt="image">
                     </div>
 
                     <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-5.png" alt="image">
+                        <img src="{% static 'assets/img/partner/partner-5.png' %}" alt="image">
                     </div>
                 </div>
             </div>
@@ -1396,7 +1508,7 @@
                             <ul class="instagram-list">
                                 <li>
                                     <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram1.jpg" alt="image">
+                                        <img src="{% static 'assets/img/instagram/instagram1.jpg' %}" alt="image">
                                         <i class="bx bxl-instagram"></i>
                                         <a href="#" target="_blank" class="link-btn"></a>
                                     </div>
@@ -1404,7 +1516,7 @@
 
                                 <li>
                                     <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram2.jpg" alt="image">
+                                        <img src="{% static 'assets/img/instagram/instagram2.jpg' %}" alt="image">
                                         <i class="bx bxl-instagram"></i>
                                         <a href="#" target="_blank" class="link-btn"></a>
                                     </div>
@@ -1412,7 +1524,7 @@
 
                                 <li>
                                     <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram3.jpg" alt="image">
+                                        <img src="{% static 'assets/img/instagram/instagram3.jpg' %}" alt="image">
                                         <i class="bx bxl-instagram"></i>
                                         <a href="#" target="_blank" class="link-btn"></a>
                                     </div>
@@ -1420,7 +1532,7 @@
 
                                 <li>
                                     <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram4.jpg" alt="image">
+                                        <img src="{% static 'assets/img/instagram/instagram4.jpg' %}" alt="image">
                                         <i class="bx bxl-instagram"></i>
                                         <a href="#" target="_blank" class="link-btn"></a>
                                     </div>
@@ -1428,7 +1540,7 @@
 
                                 <li>
                                     <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram5.jpg" alt="image">
+                                        <img src="{% static 'assets/img/instagram/instagram5.jpg' %}" alt="image">
                                         <i class="bx bxl-instagram"></i>
                                         <a href="#" target="_blank" class="link-btn"></a>
                                     </div>
@@ -1436,7 +1548,7 @@
 
                                 <li>
                                     <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram6.jpg" alt="image">
+                                        <img src="{% static 'assets/img/instagram/instagram6.jpg' %}" alt="image">
                                         <i class="bx bxl-instagram"></i>
                                         <a href="#" target="_blank" class="link-btn"></a>
                                     </div>
@@ -1444,7 +1556,7 @@
 
                                 <li>
                                     <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram7.jpg" alt="image">
+                                        <img src="{% static 'assets/img/instagram/instagram7.jpg' %}" alt="image">
                                         <i class="bx bxl-instagram"></i>
                                         <a href="#" target="_blank" class="link-btn"></a>
                                     </div>
@@ -1452,7 +1564,7 @@
 
                                 <li>
                                     <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram8.jpg" alt="image">
+                                        <img src="{% static 'assets/img/instagram/instagram8.jpg' %}" alt="image">
                                         <i class="bx bxl-instagram"></i>
                                         <a href="#" target="_blank" class="link-btn"></a>
                                     </div>
@@ -1460,7 +1572,7 @@
 
                                 <li>
                                     <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram1.jpg" alt="image">
+                                        <img src="{% static 'assets/img/instagram/instagram1.jpg' %}" alt="image">
                                         <i class="bx bxl-instagram"></i>
                                         <a href="#" target="_blank" class="link-btn"></a>
                                     </div>
