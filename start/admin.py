@@ -23,7 +23,7 @@ class BackgroundAdmin(admin.ModelAdmin):
     )
     list_per_pages = 50
     date_hierarchy = 'date_add'
-    readonly_fields = ['affiche_image',]
+    readonly_fields = ['affiche_image']
 
     fieldsets = [
         ('Info ', {'fields': ['titre',]}),
