@@ -4,7 +4,7 @@ from django.http.response import HttpResponse, JsonResponse, HttpResponseRedirec
 from django.http.request import HttpRequest
 from . import models
 from siteConfig.datamanager import mergeData
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from accounts.forms import RegisterForm
@@ -53,3 +53,9 @@ def dashboard(request: HttpRequest) -> HttpResponse:
 
     }
     return render(request, 'pages/accounts/dashboard.html', mergeData(request, data))
+
+
+def logouts(request: HttpRequest) -> HttpResponse:
+    logout(request)
+    return redirect('start:index')
+
