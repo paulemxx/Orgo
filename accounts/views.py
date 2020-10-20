@@ -16,18 +16,16 @@ def register(request: HttpRequest) -> HttpResponse:
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            user.refresh_from_db()
-            user.profile.first_name = form.cleaned_data.get('first_name')
-            user.profile.last_name = form.cleaned_data.get('last_name')
-            user.profile.email = form.cleaned_data.get('email')
-            user.save()
+            form.save()
+            first_name = form.cleaned_data.get('first_name')
+            last_name = form.cleaned_data.get('last_name')
+            email = form.cleaned_data.get('email')
             username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password')
-
-            user = authenticate(username=username, password=raw_password)
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect('accounts:login')
+            return HttpResponse('A new user has been successfully registered!')
+
     else:
         form = RegisterForm()
 
@@ -40,7 +38,8 @@ def logins(request: HttpRequest) -> HttpResponse:
     user = authenticate(username=username, password=password)
     if user is not None and user.is_active:
         login(request, user)
-        return HttpResponseRedirect('accounts:dashboard')
+        return HttpResponse('Welcome')
+
 
     else:
         data = {
