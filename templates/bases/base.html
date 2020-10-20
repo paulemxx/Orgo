@@ -99,7 +99,7 @@
                 <div class="container">
                     <div class="main-responsive-menu">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{% url 'start:index' %}">
                                 <img src="{% static 'assets/img/logo.png' %}" alt="image">
                             </a>
                         </div>
@@ -171,6 +171,29 @@
                                             </a>
                                     </li>
 
+                                    <li class="nav-item">
+                                            <a href="{% url 'accounts:login' %}" class="nav-link">
+                                                Se connecter
+                                            </a>
+                                    </li>
+
+
+                                    <li class="dropdown notification-list list-inline-item">
+                                    <div class="dropdown notification-list nav-pro-img">
+                                        {% if user.is_authenticated %}
+                                        <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <img src="{% static 'assets/img/favicon.png' %}" alt="user" class="rounded-circle">
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                            <!-- item-->
+
+                                            <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Déconnexion</a>
+
+                                        </div>
+
+                                         {% endif %}
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </nav>
