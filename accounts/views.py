@@ -35,20 +35,13 @@ def register(request: HttpRequest) -> HttpResponse:
 
 
 def logins(request: HttpRequest) -> HttpResponse:
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
-        if user:
-            if user.is_active:
-                login(request, user)
-                return redirect('accounts:dashboard')
-            else:
-                return HttpResponse("Your account was inactive.")
-        else:
-            print("Someone tried to login and failed.")
-            print("They used username: {} and password: {}".format(username, password))
-            return HttpResponse("Invalid login details given")
+    username = request.POST.get('username', False)
+    password = request.POST.get('password', False)
+    user = authenticate(username=username, password=password)
+    if user is not None and user.is_active:
+        login(request, user)
+        return HttpResponseRedirect('accounts:dashboard')
+
     else:
         data = {
 
