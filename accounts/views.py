@@ -33,3 +33,11 @@ def login(request: HttpRequest) -> HttpResponse:
 
     }
     return render(request, 'pages/accounts/login.html', mergeData(request, data))
+
+
+def dashboard(request: HttpRequest) -> HttpResponse:
+    data = {
+
+    }
+    return render(request, 'pages/accounts/dashboard.html', mergeData(request, data))
+
