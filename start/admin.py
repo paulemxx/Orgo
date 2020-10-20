@@ -121,7 +121,7 @@ class FeedbackAdmin(admin.ModelAdmin):
         'description',
         'metier',
         'nom',
-        'affiche_image'
+        'affiche_image',
         'statut',
         'date_add',
         'date_update'
@@ -143,6 +143,10 @@ class FeedbackAdmin(admin.ModelAdmin):
         ('Image', {'fields': ['cover', 'affiche_image', ]}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
+
+    def affiche_image(self, obj):
+        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
+
 
 
 class AvantageAdmin(admin.ModelAdmin):
