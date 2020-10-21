@@ -41,10 +41,29 @@ def gallery(request: HttpRequest) -> HttpResponse:
 
 
 def faq(request: HttpRequest) -> HttpResponse:
-    data = {
-        'faqs': models.Faq.objects.filter(status=True).order_by('-date_add'),
+    if request.method == 'POST':
+        nom = request.POST.get('nom')
+        email = request.POST.get('email')
+        tel = request.POST.get('tel')
+        sujet = request.POST.get('sujet')
+        message = request.POST.get('message')
+        c = models.Formfaq(
 
-    }
+            nom=nom,
+            email=email,
+            tel=tel,
+            sujet=sujet,
+            message=message,
+
+        )
+
+        c.save()
+        return redirect('start:index')
+    else:
+        data = {
+            'faqs': models.Faq.objects.filter(status=True).order_by('-date_add'),
+
+        }
     return render(request, 'pages/faq.html', mergeData(request, data))
 
 
