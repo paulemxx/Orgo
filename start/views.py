@@ -87,6 +87,9 @@ def services(request: HttpRequest) -> HttpResponse:
 
 def contact(request: HttpRequest) -> HttpResponse:
     data = {
+        'adresses': models.Adresse.objects.filter(status=True).order_by('-date_add'),
+        'calls': models.Call.objects.filter(status=True).order_by('-date_add'),
+        'Mails': models.Mail.objects.filter(status=True).order_by('-date_add'),
 
 
     }
