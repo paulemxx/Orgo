@@ -50,6 +50,7 @@ def faq(request: HttpRequest) -> HttpResponse:
 
 def team(request: HttpRequest) -> HttpResponse:
     data = {
+        'teams': models.Team.objects.filter(status=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/team.html', mergeData(request, data))
