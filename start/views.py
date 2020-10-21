@@ -19,12 +19,12 @@ def index(request: HttpRequest) -> HttpResponse:
 
 def about(request: HttpRequest) -> HttpResponse:
     data = {
-        'backs': models.Background.objects.filter(status=True).order_by('-date_add'),
-        'affs': models.Taffich.objects.filter(status=True).order_by('-date_add'),
-        'qualitys': models.Quality.objects.filter(status=True).order_by('-date_add'),
-        'chiffres': models.Chiffre.objects.filter(status=True).order_by('-date_add'),
-        'avantages': models.Avantage.objects.filter(status=True).order_by('-date_add'),
-        'titles': models.Title.objects.filter(status=True).order_by('-date_add'),
+        'backs': models.Background.objects.filter(statut=True).order_by('-date_add'),
+        'affs': models.Taffich.objects.filter(statut=True).order_by('-date_add'),
+        'qualitys': models.Quality.objects.filter(statut=True).order_by('-date_add'),
+        'chiffres': models.Chiffre.objects.filter(statut=True).order_by('-date_add'),
+        'avantages': models.Avantage.objects.filter(statut=True).order_by('-date_add'),
+        'titles': models.Title.objects.filter(statut=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/about.html', mergeData(request, data))
@@ -34,7 +34,7 @@ def about(request: HttpRequest) -> HttpResponse:
 def gallery(request: HttpRequest) -> HttpResponse:
 
     data = {
-        'gallerys': models.Gallery.objects.filter(status=True).order_by('-date_add'),
+        'gallerys': models.Gallery.objects.filter(statut=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/gallery.html',mergeData(request, data))
@@ -61,7 +61,7 @@ def faq(request: HttpRequest) -> HttpResponse:
         return redirect('start:index')
     else:
         data = {
-            'faqs': models.Faq.objects.filter(status=True).order_by('-date_add'),
+            'faqs': models.Faq.objects.filter(statut=True).order_by('-date_add'),
 
         }
     return render(request, 'pages/faq.html', mergeData(request, data))
@@ -70,7 +70,7 @@ def faq(request: HttpRequest) -> HttpResponse:
 
 def team(request: HttpRequest) -> HttpResponse:
     data = {
-        'teams': models.Team.objects.filter(status=True).order_by('-date_add'),
+        'teams': models.Team.objects.filter(statut=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/team.html', mergeData(request, data))
@@ -79,7 +79,7 @@ def team(request: HttpRequest) -> HttpResponse:
 
 def services(request: HttpRequest) -> HttpResponse:
     data = {
-        'services': models.Services.objects.filter(status=True).order_by('-date_add'),
+        'services': models.Services.objects.filter(statut=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/services.html', mergeData(request, data))
@@ -87,9 +87,9 @@ def services(request: HttpRequest) -> HttpResponse:
 
 def contact(request: HttpRequest) -> HttpResponse:
     data = {
-        'adresses': models.Adresse.objects.filter(status=True).order_by('-date_add'),
-        'calls': models.Call.objects.filter(status=True).order_by('-date_add'),
-        'Mails': models.Mail.objects.filter(status=True).order_by('-date_add'),
+        'adresses': models.Adresse.objects.filter(statut=True).order_by('-date_add'),
+        'calls': models.Call.objects.filter(statut=True).order_by('-date_add'),
+        'Mails': models.Mail.objects.filter(statut=True).order_by('-date_add'),
 
 
     }
