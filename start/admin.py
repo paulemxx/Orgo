@@ -58,7 +58,7 @@ class TaffichAdmin(admin.ModelAdmin):
 
     fieldsets = [
         ('Info ', {'fields': ['titre', 'description', ]}),
-        ('Image', {'fields': ['cover', 'affiche_image', ]}),
+        ('Image', {'fields': ['cover','affiche_image']}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 

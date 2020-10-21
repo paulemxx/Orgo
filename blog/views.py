@@ -25,7 +25,7 @@ def single_blog(request: HttpRequest, titre_slug: str) -> HttpResponse:
     data = {
 
         'categories': models.Categorie.objects.filter(statut=True).order_by('-date_add'),
-
+        'articles': models.Article.objects.filter(statut=True),
         'singles': models.Article.objects.filter(titre_slug=titre_slug)[:1],
         'tags': models.Tag.objects.filter(statut=True)[:5],
         'commentaires': models.Commentaire.objects.filter(statut=True).order_by('-date_add')[:6],
