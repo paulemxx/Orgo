@@ -42,6 +42,7 @@ def gallery(request: HttpRequest) -> HttpResponse:
 
 def faq(request: HttpRequest) -> HttpResponse:
     data = {
+        'faqs': models.Faq.objects.filter(status=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/faq.html', mergeData(request, data))
