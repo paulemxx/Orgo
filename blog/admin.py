@@ -134,9 +134,6 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 
-
-
-
 def _register(model, admin_class):
     admin.site.register(model, admin_class)
 

@@ -237,18 +237,18 @@ class TeamAdmin(admin.ModelAdmin):
 class GalleryAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
-
         'affiche_image',
+
         'statut',
         'date_add',
         'date_update'
     )
     list_filter = (
+
         'statut',
-        'date_add',
-        'date_update',
     )
     search_fields = (
+
         'titre',
     )
     list_per_pages = 50
@@ -256,13 +256,18 @@ class GalleryAdmin(admin.ModelAdmin):
     readonly_fields = ['affiche_image']
 
     fieldsets = [
-        ('Info ', {'fields': ['titre', ]}),
-        ('Image', {'fields': ['cover', 'affiche_image', ]}),
-        ('Statut et Activations', {'fields': ['statut', ]}),
+        ('Info ', {'fields': [
+
+            'titre',
+        ]
+        }),
+        ('Image', {'fields': ['cover', 'affiche_image']}),
+        ('Status et Activations', {'fields': ['statut', ]}),
     ]
 
     def affiche_image(self, obj):
         return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
+
 
 # TODO : Faq
 
