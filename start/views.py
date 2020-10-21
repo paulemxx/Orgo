@@ -19,6 +19,12 @@ def index(request: HttpRequest) -> HttpResponse:
 
 def about(request: HttpRequest) -> HttpResponse:
     data = {
+        'backs': models.Background.objects.filter(status=True).order_by('-date_add'),
+        'affs': models.Taffich.objects.filter(status=True).order_by('-date_add'),
+        'qualitys': models.Quality.objects.filter(status=True).order_by('-date_add'),
+        'chiffres': models.Chiffre.objects.filter(status=True).order_by('-date_add'),
+        'avantages': models.Avantage.objects.filter(status=True).order_by('-date_add'),
+        'titles': models.Title.objects.filter(status=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/about.html', mergeData(request, data))
