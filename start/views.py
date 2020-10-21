@@ -62,6 +62,7 @@ def faq(request: HttpRequest) -> HttpResponse:
     else:
         data = {
             'faqs': models.Faq.objects.filter(statut=True).order_by('-date_add'),
+            'formfaqs': models.Formfaq.objects.filter(statut=True).order_by('-date_add'),
 
         }
     return render(request, 'pages/faq.html', mergeData(request, data))

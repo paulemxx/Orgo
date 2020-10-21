@@ -27,99 +27,25 @@
         <section class="faq-area ptb-100">
             <div class="container">
                 <div class="section-title">
-                    <h2>Asked Questions</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h2>FOIRE A QUESTIONS</h2>
                 </div>
 
                 <div class="faq-accordion">
                     <ul class="accordion">
+                        {% for faq in faqs %}
                         <li class="accordion-item">
                             <a class="accordion-title active" href="javascript:void(0)">
                                 <i class='bx bx-plus'></i>
-                                Which material types can you work with?
+                                {{faq.questions}}
                             </a>
 
                             <p class="accordion-content show">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                                {{faq.questions}}.
                             </p>
                         </li>
+                        {% endfor %}
                         
-                        <li class="accordion-item">
-                            <a class="accordion-title" href="javascript:void(0)">
-                                <i class='bx bx-plus'></i>
-                                What Access Do I Have On The Free Plan?
-                            </a>
 
-                            <p class="accordion-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                            </p>
-                        </li>
-                        
-                        <li class="accordion-item">
-                            <a class="accordion-title" href="javascript:void(0)">
-                                <i class='bx bx-plus'></i>
-                                Can I Have Multiple Activities In A Single Feature?
-                            </a>
-
-                            <p class="accordion-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                            </p>
-                        </li>
-                        
-                        <li class="accordion-item">
-                            <a class="accordion-title" href="javascript:void(0)">
-                                <i class='bx bx-plus'></i>
-                                Which Material Types Can You Work With?
-                            </a>
-
-                            <p class="accordion-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                            </p>
-                        </li>
-
-                        <li class="accordion-item">
-                            <a class="accordion-title" href="javascript:void(0)">
-                                <i class='bx bx-plus'></i>
-                                Why Choose Our Services In Your Business?
-                            </a>
-
-                            <p class="accordion-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                            </p>
-                        </li>
-                        
-                        <li class="accordion-item">
-                            <a class="accordion-title" href="javascript:void(0)">
-                                <i class='bx bx-plus'></i>
-                                What do I need to know about mobile?
-                            </a>
-
-                            <p class="accordion-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                            </p>
-                        </li>
-
-                        <li class="accordion-item">
-                            <a class="accordion-title" href="javascript:void(0)">
-                                <i class='bx bx-plus'></i>
-                                How To Get Start With Us?
-                            </a>
-
-                            <p class="accordion-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                            </p>
-                        </li>
-
-                        <li class="accordion-item">
-                            <a class="accordion-title" href="javascript:void(0)">
-                                <i class='bx bx-plus'></i>
-                                Why Choose Our Services In Your Business?
-                            </a>
-
-                            <p class="accordion-content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                            </p>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -130,12 +56,12 @@
         <div class="faq-contact-area ptb-100">
             <div class="container">
                 <div class="section-title">
-                    <h2>Do You Have Any Questions?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h2>Vous avez des Questions?</h2>
+
                 </div>
     
                 <div class="faq-contact-form">
-                    <form id="contactForm" method="post">
+                    <form id="contactForm" action="{% url 'start:index' %]" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
