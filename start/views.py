@@ -79,6 +79,7 @@ def team(request: HttpRequest) -> HttpResponse:
 
 def services(request: HttpRequest) -> HttpResponse:
     data = {
+        'services': models.Services.objects.filter(status=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/services.html', mergeData(request, data))
