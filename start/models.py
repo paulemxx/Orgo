@@ -36,8 +36,8 @@ class Taffich(models.Model):
     date_update = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "Advantage"
-        verbose_name_plural = "Advantages"
+        verbose_name = "Taffich"
+        verbose_name_plural = "Taffichs"
 
     def __str__(self) -> str:
         return str(self.titre)
@@ -67,8 +67,8 @@ class Chiffre(models.Model):
     date_update = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "Quality"
-        verbose_name_plural = "Quality"
+        verbose_name = "Chiffre"
+        verbose_name_plural = "Chiffres"
 
     def __str__(self) -> str:
         return str(self.titre)
@@ -96,14 +96,14 @@ class Feedback(models.Model):
 class Avantage(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
     recit = models.CharField(max_length=255, null=True, blank=True)
-    nombre = models.IntegerField()
+
     statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "Quality"
-        verbose_name_plural = "Quality"
+        verbose_name = "Avantage"
+        verbose_name_plural = "Avantages"
 
     def __str__(self) -> str:
         return str(self.titre)
@@ -111,6 +111,7 @@ class Avantage(models.Model):
 
 class Title(models.Model):
     titre = models.CharField(max_length=255, null=True, blank=True)
+    description = models.CharField(max_length=255, null=True, blank=True)
 
     statut = models.BooleanField(default=True)
     date_add = models.DateTimeField(auto_now_add=True)

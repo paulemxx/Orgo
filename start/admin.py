@@ -121,7 +121,7 @@ class FeedbackAdmin(admin.ModelAdmin):
         'description',
         'metier',
         'nom',
-        'affiche_image'
+        'affiche_image',
         'statut',
         'date_add',
         'date_update'
@@ -144,12 +144,15 @@ class FeedbackAdmin(admin.ModelAdmin):
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
+    def affiche_image(self, obj):
+        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
+
+
 
 class AvantageAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
         'recit',
-        'nombre',
         'statut',
         'date_add',
         'date_update'
@@ -166,13 +169,15 @@ class AvantageAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_add'
 
     fieldsets = [
-        ('Info ', {'fields': ['titre',  'recit', 'nombre',]}),
+        ('Info ', {'fields': ['titre',  'recit']}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
 class TitleAdmin(admin.ModelAdmin):
     list_display = (
+
         'titre',
+        'description',
 
         'statut',
         'date_add',
@@ -190,7 +195,7 @@ class TitleAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_add'
 
     fieldsets = [
-        ('Info ', {'fields': ['titre', ]}),
+        ('Info ', {'fields': ['titre', 'description',]}),
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
@@ -447,6 +452,6 @@ _register(models.Services, ServicesAdmin)
 _register(models.Adresse, AdresseAdmin)
 _register(models.Mail, MailAdmin)
 _register(models.Call, CallAdmin)
-
+_register(models.Feedback, FeedbackAdmin)
 
 
