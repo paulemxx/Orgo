@@ -34,7 +34,7 @@ def about(request: HttpRequest) -> HttpResponse:
 def gallery(request: HttpRequest) -> HttpResponse:
 
     data = {
-
+        'gallerys': models.Gallery.objects.filter(status=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/gallery.html',mergeData(request, data))
