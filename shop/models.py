@@ -48,6 +48,7 @@ class Produit(models.Model):
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
     categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
     description = HTMLField('shop/description')
+    resume = HTMLField('shop/resume')
     old_prix = models.FloatField()
     new_prix = models.FloatField()
 
