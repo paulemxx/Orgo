@@ -22,15 +22,35 @@ def shop(request: HttpRequest) -> HttpResponse:
 
 
 def product(request: HttpRequest, titre_slug: str) -> HttpResponse:
-    data = {
-        'singles': models.Produit.objects.filter(statut=True, titre_slug=titre_slug)[:1],
-        'prod': models.Produit.objects.filter(statut=True).order_by('-date_add')[:3],
-        'tags': models.Tag.objects.filter(statut=True)[:5],
-        'prods': models.Produit.objects.filter(statut=True).order_by('date_add')[:3],
+    if request.method == 'POST':
+        produit_id = request.POST.get('produit')
+        nom = request.POST.get('nom')
+        email = request.POST.get('email')
+        titre = request.POST.get('titre')
+        review = request.POST.get('review')
+
+        c = models.Review(
+
+            nom=nom,
+            email=email,
+            titre=titre,
+            review=review,
 
 
-    }
-    return render(request, 'pages/shop/shop_details.html', data)
+        )
+
+        c.save()
+        return redirect('shop:index')
+    else:
+        data = {
+            'singles': models.Produit.objects.filter(statut=True, titre_slug=titre_slug)[:1],
+            'prod': models.Produit.objects.filter(statut=True).order_by('-date_add')[:3],
+            'tags': models.Tag.objects.filter(statut=True)[:5],
+            'prods': models.Produit.objects.filter(statut=True).order_by('date_add')[:3],
+
+
+        }
+        return render(request, 'pages/shop/shop_details.html', data)
 
 
 

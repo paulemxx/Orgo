@@ -133,19 +133,7 @@
                                         <div class="tabs_item">
                                             <div class="products-details-tab-content">
                                                 <div class="product-review-form">
-                                                    <h3>Customer Reviews</h3>
-                                                    <div class="review-title">
-                                                        <div class="rating">
-                                                            <i class='bx bxs-star'></i>
-                                                            <i class='bx bxs-star'></i>
-                                                            <i class='bx bxs-star'></i>
-                                                            <i class='bx bxs-star'></i>
-                                                        </div>
-                                                        <p>Based on 3 reviews</p>
-                                                        <a href="#" class="default-btn">
-                                                            Write a Review
-                                                        </a>
-                                                    </div>
+
                                                     {% for singles in singles %}
                                                     <div class="review-comments">
                                                         {% for review in singles.getReviews %}
@@ -170,6 +158,7 @@
                                                             {% csrf_token %}
                                                             <div class="row">
                                                                 <div class="col-lg-6 col-md-6">
+                                                                    <li class="inp-hidden"><input type="hidden" name="produit" value="{{single.id}}"></li>
                                                                     <div class="form-group">
                                                                         <input type="text" id="name" name="nom" placeholder="Enter your name" class="form-control">
                                                                     </div>
