@@ -15,7 +15,7 @@ def shop(request: HttpRequest) -> HttpResponse:
     data = {
 
 
-        'prod': models.Produit.objects.filter(status=True).order_by('-date_add')[:3]
+        'prod': models.Produit.objects.filter(status=True).order_by('-date_add')
 
     }
     return render(request, 'pages/shop/shop.html', mergeData(request, data))
