@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -10,30 +11,29 @@
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Login Page - Vuexy - Bootstrap HTML admin template</title>
-    <link rel="apple-touch-icon" href="../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../app-assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="{% static 'admin/app-assets/images/ico/apple-icon-120.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'admin/app-assets/images/ico/favicon.ico' %}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/vendors/css/vendors.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/components.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/dark-layout.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/semi-dark-layout.css">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/css/bootstrap-extended.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/css/colors.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/css/components.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/css/themes/dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/css/themes/semi-dark-layout.css' %}">
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/core/menu/menu-types/horizontal-menu.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/pages/authentication.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/css/core/menu/menu-types/horizontal-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/css/core/colors/palette-gradient.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/app-assets/css/pages/authentication.css' %}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/style.css' %}">
     <!-- END: Custom CSS-->
 
 </head>
@@ -48,7 +48,7 @@
     <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-fixed navbar-brand-center">
         <div class="navbar-header d-xl-block d-none">
             <ul class="nav navbar-nav flex-row">
-                <li class="nav-item"><a class="navbar-brand" href="../../../html/ltr/horizontal-menu-template-dark/index.html">
+                <li class="nav-item"><a class="navbar-brand" href="{% static 'admin/html/ltr/horizontal-menu-template-dark/index.html' %}">
                         <div class="brand-logo"></div>
                     </a></li>
             </ul>
@@ -83,13 +83,12 @@
                         <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>
                       
                            
-                        </li>
-                      
+
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">John Doe</span><span class="user-status">Available</span></div><span><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
+                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">John Doe</span><span class="user-status">Available</span></div><span><img class="round" src="{% static 'admin/app-assets/images/portrait/small/avatar-s-11.jpg' %}" alt="avatar" height="40" width="40"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="app-email.html"><i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="feather icon-message-square"></i> Chats</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login.html"><i class="feather icon-power"></i> Logout</a>
+                                <div class="dropdown-divider"></div><a class="dropdown-item" href="{% static 'admin/pages/administration/auth-login.html' %}"><i class="feather icon-power"></i> Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -111,7 +110,7 @@
         <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-dark navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
             <div class="navbar-header">
                 <ul class="nav navbar-nav flex-row">
-                    <li class="nav-item mr-auto"><a class="navbar-brand" href="../../../html/ltr/horizontal-menu-template-dark/index.html">
+                    <li class="nav-item mr-auto"><a class="navbar-brand" href="{% static 'admin/html/ltr/horizontal-menu-template-dark/index.html' %}">
                             <div class="brand-logo"></div>
                             <h2 class="brand-text mb-0">Vuexy</h2>
                         </a></li>
@@ -123,7 +122,7 @@
                 <!-- include ../../../includes/mixins-->
                 <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
                     
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="index.html" data-toggle="dropdown"><i class="feather icon-edit-2"></i><span data-i18n="Dashboard">Comptes</span></a>
+                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="{% static 'admin/pages/administration/index.html' %}" data-toggle="dropdown"><i class="feather icon-edit-2"></i><span data-i18n="Dashboard">Comptes</span></a>
                         <ul class="dropdown-menu">
                             <li class="active" data-menu=""><a class="dropdown-item" href="dashboard-analytics.html" data-toggle="dropdown" data-i18n="Analytics"><i class="feather icon-activity"></i>Administrateurs</a>
                                 <ul class="dropdown-menu">
@@ -146,7 +145,7 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="index.html" data-toggle="dropdown"><i class="feather icon-edit-2"></i><span data-i18n="Dashboard">Blog</span></a>
+                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="{% static 'admin/pages/administration/index.html' %}" data-toggle="dropdown"><i class="feather icon-edit-2"></i><span data-i18n="Dashboard">Blog</span></a>
                         <ul class="dropdown-menu">
                             <li class="active" data-menu=""><a class="dropdown-item" href="dashboard-analytics.html" data-toggle="dropdown" data-i18n="Analytics"><i class="feather icon-activity"></i>Ajout</a>
                                 <ul class="dropdown-menu">
@@ -176,7 +175,7 @@
                         </ul>
                     </li>
                     
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="index.html" data-toggle="dropdown"><i class="feather icon-edit-2"></i><span data-i18n="Dashboard">Shop</span></a>
+                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="{% static 'admin/pages/administration/index.html' %}" data-toggle="dropdown"><i class="feather icon-edit-2"></i><span data-i18n="Dashboard">Shop</span></a>
                         <ul class="dropdown-menu">
                             <li class="active" data-menu=""><a class="dropdown-item" href="dashboard-analytics.html" data-toggle="dropdown" data-i18n="Analytics"><i class="feather icon-activity"></i>Ajout</a>
                                 <ul class="dropdown-menu">
@@ -205,7 +204,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="index.html" data-toggle="dropdown"><i class="feather icon-edit-2"></i><span data-i18n="Dashboard">Standard</span></a>
+                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="{% static 'admin/pages/administration/index.html' %}" data-toggle="dropdown"><i class="feather icon-edit-2"></i><span data-i18n="Dashboard">Standard</span></a>
                         <ul class="dropdown-menu">
                             <li class="active" data-menu=""><a class="dropdown-item" href="dashboard-analytics.html" data-toggle="dropdown" data-i18n="Analytics"><i class="feather icon-activity"></i>Ajout</a>
                                 <ul class="dropdown-menu">
@@ -234,20 +233,12 @@
     </div>
     <!-- END: Main Menu-->
 
-    <!-- BEGIN: Content-->
-    <div class="app-content content">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper">
-            <div class="content-header row">
-            </div>
-            <div class="content-body">
-            
 
-            </div>
-        </div>
-    </div>
-    <!-- END: Content-->
+
+    {% block content %}
+
+    {% endblock %}
+
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
@@ -263,17 +254,17 @@
 
     
     <!-- BEGIN: Vendor JS-->
-    <script src="../app-assets/vendors/js/vendors.min.js"></script>
+    <script src="{% static 'admin/app-assets/vendors/js/vendors.min.js' %}"></script>
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="../app-assets/vendors/js/ui/jquery.sticky.js"></script>
+    <script src="{% static 'admin/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="../app-assets/js/core/app-menu.js"></script>
-    <script src="../app-assets/js/core/app.js"></script>
-    <script src="../app-assets/js/scripts/components.js"></script>
+    <script src="{% static 'admin/app-assets/js/core/app-menu.js' %}"></script>
+    <script src="{% static 'admin/app-assets/js/core/app.js' %}"></script>
+    <script src="{% static 'admin/app-assets/js/scripts/components.js' %}"></script>
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->

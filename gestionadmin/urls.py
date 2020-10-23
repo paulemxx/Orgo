@@ -6,4 +6,6 @@ app_name = 'gestionadmin'
 
 urlpatterns = [
 
+    path('', views.index, name='index'),
+
 ]
