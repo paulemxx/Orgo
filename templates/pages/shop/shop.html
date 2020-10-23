@@ -50,7 +50,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="top-products-item">
                             <div class="products-image">
-                                <a href="{% url 'blog:single_blog' produit.titre_slug %}"><img src="{{produit.cover.url}}" alt="image"></a>
+                                <a href="{% url 'shop:shop_details' produit.titre_slug %}"><img src="{{produit.cover.url}}" alt="image"></a>
 
                                 <ul class="products-action">
                                     <li>
@@ -73,7 +73,7 @@
 
                             <div class="products-content">
                                 <h3>
-                                    <a href="{% url 'blog:single_blog' produit.titre_slug %}">{{produit.titre}}</a>
+                                    <a href="{% url 'shop:shop_details' produit.titre_slug %}">{{produit.titre}}</a>
                                 </h3>
                                 <div class="price">
                                     <span class="new-price">{{produit.old_prix}}</span>
