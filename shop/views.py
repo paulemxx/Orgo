@@ -31,6 +31,7 @@ def product(request: HttpRequest, titre_slug: str) -> HttpResponse:
 
         c = models.Review(
 
+            produit_id = produit_id,
             nom=nom,
             email=email,
             titre=titre,

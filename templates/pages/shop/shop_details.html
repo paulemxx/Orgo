@@ -154,11 +154,12 @@
                                                     {% endfor %}
                                                     <div class="review-form">
                                                         <h3>Write a Review</h3>
+                                                        {% for singles in singles %}
                                                         <form method="post" enctype="multipart/form-data">
                                                             {% csrf_token %}
                                                             <div class="row">
                                                                 <div class="col-lg-6 col-md-6">
-                                                                    <li class="inp-hidden"><input type="hidden" name="produit" value="{{single.id}}"></li>
+                                                                    <div class="inp-hidden"><input type="hidden" name="produit" value="{{single.id}}"></div>
                                                                     <div class="form-group">
                                                                         <input type="text" id="name" name="nom" placeholder="Enter your name" class="form-control">
                                                                     </div>
@@ -185,6 +186,7 @@
                                                                 </div>
                                                             </div>
                                                         </form>
+                                                        {% endfor %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -193,7 +195,7 @@
                                 </div>
                             </div>
                         </div>
-              {% endfor %}
+
 
                     </div>
                     
@@ -206,17 +208,17 @@
 
                                 <form>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="$10">
+                                        <input type="text" class="form-control" placeholder="{{single.old_prix}}">
                                     </div>
                                 </form>
                             </section>
-
+                        {% endfor %}
                             <section class="widget widget_popular_products">
                                 <h3 class="widget-title">Popular Products</h3>
                                 {% for produit in prod %}
                                 <article class="item">
                                     <a href="{% url 'shop:product' produit.titre_slug %}" class="thumb">
-                                        <span class="{{produit.cover.url}}" role="img"></span>
+                                       <div class="gallery-image"> <img src="{{produit.cover.url}}" alt="image"></div>
                                     </a>
                                     <div class="info">
                                         <span>{{produit.old_price}}</span>
@@ -264,7 +266,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="featured-products-item">
                             <div class="products-image">
-                                <a href="shop_details.html"><img src="{{prod.cover.url}" alt="image"></a>
+                                <a href="{% url 'shop:product' prod.titre_slug %}"><img src="{{prod.cover.url}}" alt="image"></a>
 
                                 <ul class="products-action">
                                     <li>
