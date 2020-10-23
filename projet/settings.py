@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'siteConfig.apps.SiteconfigConfig',
     'accounts.apps.AccountsConfig',
-    'administration.apps.AdministrationConfig',
+    'gestionadmin.apps.GestionadminConfig',
+
 
 ]
 
