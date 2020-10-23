@@ -52,8 +52,8 @@ class Article(models.Model):
     titre = models.CharField(max_length=50)
     titre_slug = models.SlugField(editable=False, null=True, max_length=255)
     cover = models.ImageField(upload_to='articles')
-    contenu = HTMLField('Content')
-    resume = HTMLField('Content')
+    contenu = HTMLField('Contenu')
+    resume = HTMLField('resume')
     categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE, related_name='articles')
 
 
