@@ -64,6 +64,7 @@ class ProduitAdmin(admin.ModelAdmin):
         'tag',
         'old_prix',
         'new_prix',
+        'resume',
         'statut',
         'date_add',
         'date_update'
@@ -88,6 +89,7 @@ class ProduitAdmin(admin.ModelAdmin):
             'old_prix',
             'new_prix',
             'description',
+            'resume',
 
         ]
         }),
