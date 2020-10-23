@@ -74,8 +74,13 @@ class Produit(models.Model):
         super(Produit, self).save(*args, **kwargs)
 
 
-class Review(models.Model):
+    @property
+    def getReviews(self) -> QuerySet:
+        return self.reviews.filter(statut=True).order_by('-date_add')
 
+
+class Review(models.Model):
+    produit = models.ForeignKey(Produit, on_delete=models.CASCADE, related_name='reviews')
     titre = models.CharField(max_length=50)
     nom = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)

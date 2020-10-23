@@ -103,14 +103,15 @@ class ProduitAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
 
 
-    list_display = ('titre', 'nom', 'email', 'review', 'statut', 'date_add', 'date_update',)
+    list_display = ('produit','titre', 'nom', 'email', 'review', 'statut', 'date_add', 'date_update',)
     list_filter = ('nom', 'statut', 'date_add',)
     search_fields = ('name',)
     date_hierarchy = 'date_add'
     fieldsets = (
         ('Info', {
             'fields': [
-                'titre', 'nom',  'email', 'review']
+
+                'produit','titre', 'nom',  'email', 'review']
 
             ,
         }),
