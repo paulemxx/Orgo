@@ -225,12 +225,12 @@
                                 <h3 class="widget-title">Popular Products</h3>
                                 {% for produit in prod %}
                                 <article class="item">
-                                    <a href="{% url 'shop:shop_details' produit.titre_slug %}" class="thumb">
+                                    <a href="{% url 'shop:product' produit.titre_slug %}" class="thumb">
                                         <span class="{{produit.cover.url}}" role="img"></span>
                                     </a>
                                     <div class="info">
                                         <span>{{produit.old_price}}</span>
-                                        <h4 class="title usmall"><a href="{% url 'shop:shop_details' produit.titre_slug %}">{{produit.titre}}</a></h4>
+                                        <h4 class="title usmall"><a href="{% url 'shop:product' produit.titre_slug %}">{{produit.titre}}</a></h4>
                                         <div class="rating">
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
