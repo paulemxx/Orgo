@@ -54,21 +54,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        {% for tag in tags %}
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
+                                                <th scope="row">{{forloop.counter}}</th>
+                                                <td>{{tag.titre}}</td>
 
                                             </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-
-                                            </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
