@@ -55,3 +55,13 @@ def product(request: HttpRequest, titre_slug: str) -> HttpResponse:
 
 
 
+def cart(request: HttpRequest) -> HttpResponse:
+    data = {
+
+        'cart': models.Cart.objects.filter(statut=True),
+
+
+
+
+    }
+    return render(request, 'pages/shop/cart.html', mergeData(request, data))
