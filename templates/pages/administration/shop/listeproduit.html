@@ -54,47 +54,23 @@
                                                 <th scope="col">Tag</th>
                                                 <th scope="col">Old prix</th>
                                                 <th scope="col">New prix</th>
-                                                <th scope="col">Contenu</th>
                                                 <th scope="col">Résumé</th>
                                                 <th scope="col">Images</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        {% for pro in prods %}
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>1550 Frs</td>
-                                                <td>1550 Frs</td>
-                                                <td>sincere@april.biz</td>
-                                                <td>@mdo</td>
-                                                <td> <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep"></td>
+                                                <th scope="row">{{forloop.counter}}</th>
+                                                <td>{{pro.titre}}</td>
+                                                <td>{{pro.categorie}}</td>
+                                                <td>{{pro.tag}}</td>
+                                                <td>{{pro.old_prix}}Frs</td>
+                                                <td>{{pro.new_prix}}Frs</td>
+                                                <td>{{pro.resume|safe}}</td>
+                                                <td> <img src="{{pro.cover.url}}" class="img-fluid img-thumbnail" alt="Sheep"></td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>1550 Frs</td>
-                                                <td>1550 Frs</td>
-                                                <td>sincere@april.biz</td>
-                                                <td>@mdo</td>
-                                                <td> <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep"></td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>1550 Frs</td>
-                                                <td>1550 Frs</td>
-                                                <td>sincere@april.biz</td>
-                                                <td>@mdo</td>
-                                                <td> <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep"></td>
-
-                                            </tr>
+                                           {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
