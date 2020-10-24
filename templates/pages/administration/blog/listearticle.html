@@ -51,40 +51,20 @@
                                                 <th scope="col">ID</th>
                                                 <th scope="col">Auteur</th>
                                                 <th scope="col">Catégorie</th>
-                                                <th scope="col">Tag</th>
-                                                <th scope="col">Contenu</th>
                                                 <th scope="col">Résumé</th>
                                                 <th scope="col">Images</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                          {% for pro in articles %}
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>sincere@april.biz</td>
-                                                <td>@mdo</td>
-                                                <td> <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep"></td>
+                                                <th scope="row">{{forloop.counter}}</th>
+                                                <td>{{pro.auteur}}</td>
+                                                <td>{{pro.categorie}}</td>
+                                                <td>{{pro.resume|safe}}</td>
+                                                <td> <img src="{{pro.cover.url}}" class="img-fluid img-thumbnail" alt="Sheep"></td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Leanne Graham</td>
-                                                <td>Ervin Howell</td>
-                                                <td>Leanne Graham</td>
-                                                <td>shanna@melissa.tv</td>
-                                                <td> <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep"></td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Leanne Graham</td>
-                                                <td>Clementine Bauch</td>
-                                                <td>Leanne Graham</td>
-                                                <td>nathan@yesenia.net</td>
-                                                <td> <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep"></td>
-
-                                            </tr>
+                                           {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
