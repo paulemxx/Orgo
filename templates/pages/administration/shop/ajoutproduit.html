@@ -15,7 +15,7 @@
                             <h2 class="content-header-title float-left mb-0">Form Layouts</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    <li class="breadcrumb-item"><a href="../index.html">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="#">Forms</a>
                                     </li>
@@ -42,25 +42,14 @@
                         <div class="col-md-6 col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Ajout d'un article</h4>
+                                    <h4 class="card-title">Ajout d'un produit</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
                                         <form class="form form-horizontal">
                                             <div class="form-body">
                                                 <div class="row">
-                                                    <div class="col-md-6 col-12">
-                                                        <div class="text-bold-600 font-medium-2">
-                                                            Auteur
-                                                        </div>
-                                                        <fieldset class="form-group">
-                                                            <select class="form-control" name="auteur" id="basicSelect">
-                                                                <option>IT</option>
-                                                                <option>Blade Runner</option>
-                                                                <option>Thor Ragnarok</option>
-                                                            </select>
-                                                        </fieldset>
-                                                    </div>
+                                                 
                                                     <div class="col-12">
                                                         <div class="form-group row">
                                                             <div class="col-md-4">
@@ -102,31 +91,81 @@
                                                             </select>
                                                         </fieldset>
                                                     </div>
-                                                    <section class="floating-label-textarea">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div class="card">
-                                                                    <div class="card-header">
-                                                                        <h4 class="card-title">Contenu</h4>
-                                                                    </div>
-                                                                    <div class="card-content">
-                                                                        <div class="card-body">
-                                                                            <div class="row">
-                                                                                <div class="col-12">
-                                                                                    <fieldset class="form-label-group">
-                                                                                        <textarea class="form-control" id="label-textarea" name="contenu" rows="3" placeholder="Contenu"></textarea>
-                                                                                        <label for="label-textarea">Contenu</label>
-                                                                                    </fieldset>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                    <section class="floating-label-textarea">
-                                                        <div class="row">
+                                                       <!-- Bootstrap TouchSpin Spinners Decimal start -->
+                <section id="touchspin-decimal">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Decimal</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p>Set <code>data-bts-step</code> and <code>data-bts-decimals</code> attributes for decimal type Input Touchspin.</p>
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Bootstrap TouchSpin Spinners Decimal end -->
+
+                   <!-- Bootstrap TouchSpin Spinners Decimal start -->
+                   <section id="touchspin-decimal">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Old prix</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="text" class="touchspin" name="old_prix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Bootstrap TouchSpin Spinners Decimal end -->
+ <!-- Bootstrap TouchSpin Spinners Decimal start -->
+                <section id="touchspin-decimal">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">New prix</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="text" class="touchspin" name="new_prix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                                                                    <section class="floating-label-textarea">
+                                                                        <div class="row">
                                                             <div class="col-12">
                                                                 <div class="card">
                                                                     <div class="card-header">
@@ -149,7 +188,7 @@
                                                             </div>
                                                         </div>
                                                     </section>
-                                                    <img src="..." class="rounded float-right" name="cover" alt="...">
+                                                    <img src="..." class="rounded float-right"  name="cover"  alt="...">
                                                    
                                                     <div class="col-md-8 offset-md-4">
                                                         <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
