@@ -27,8 +27,8 @@ urlpatterns = [
     path('shop/', include('shop.urls')),
     path('siteConfig/', include('siteConfig.urls')),
     path('accounts/', include('accounts.urls')),
-    path('blog/', include('gestionadmin.blog.urls')),
-    path('shop/', include('gestionadmin.shop.urls')),
+    path('blog/', include('gestionadmin.blogs.urls')),
+    path('shop/', include('gestionadmin.shops.urls')),
     path('users/', include('gestionadmin.users.urls')),
     path('gestionadmin/', include('gestionadmin.urls')),
 

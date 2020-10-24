@@ -1,8 +1,7 @@
-from django.contrib import admin
-from django.urls import path, include
-from . import views
+from django.urls import path
+from gestionadmin.shops import views
 
-app_name = 'shop'
+app_name = 'shops'
 
 urlpatterns = [
 
