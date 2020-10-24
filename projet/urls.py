@@ -27,10 +27,11 @@ urlpatterns = [
     path('shop/', include('shop.urls')),
     path('siteConfig/', include('siteConfig.urls')),
     path('accounts/', include('accounts.urls')),
-    path('blog/', include('gestionadmin.blogs.urls')),
-    path('shop/', include('gestionadmin.shops.urls')),
-    path('users/', include('gestionadmin.utilisateurs.urls')),
+
     path('gestionadmin/', include('gestionadmin.urls')),
+    path('blogs/', include('gestionadmin.blogs.urls')),
+    path('shops/', include('gestionadmin.shops.urls')),
+    path('utilisateurs/', include('gestionadmin.utilisateurs.urls'))
 
 ]
 
