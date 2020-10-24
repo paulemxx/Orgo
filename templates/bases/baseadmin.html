@@ -126,18 +126,18 @@
                         <ul class="dropdown-menu">
                             <li class="active" data-menu=""><a class="dropdown-item" href="#" data-toggle="dropdown" data-i18n="Analytics"><i class="feather icon-activity"></i>Administrateurs</a>
                                 <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:utilisateurs:ajoutadmin' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Ajouter un Administrateur </a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'utilisateurs:ajoutadmin' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Ajouter un Administrateur </a>
                                     </li>
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:utilisateurs:listeadmin' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Liste des Administrateurs</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'utilisateurs:listeadmin' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Liste des Administrateurs</a>
                                     </li>
                                     
                                 </ul>
                             </li>
                             <li data-menu=""><a class="dropdown-item" href="{#" data-toggle="dropdown" data-i18n="eCommerce"><i class="feather icon-edit-2"></i>Utilisateurs</a>
                                 <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:utilisateurs:ajoutuser' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Ajouter d'un utilisateur </a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'utilisateurs:ajoutuser' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Ajouter d'un utilisateur </a>
                                     </li>
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:utilisateurs:listeuser' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Liste des Administrateurs</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'utilisateurs:listeuser' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Liste des Administrateurs</a>
                                     </li>
                                     
                                 </ul>
@@ -149,24 +149,24 @@
                         <ul class="dropdown-menu">
                             <li class="active" data-menu=""><a class="dropdown-item" href="#" data-toggle="dropdown" data-i18n="Analytics"><i class="feather icon-activity"></i>Ajout</a>
                                 <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:blogs:ajoutarticle' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Un article</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'blogs:ajoutarticle' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Un article</a>
                                     </li>
 
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:blogs:ajouttag' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Un tag</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'blogs:ajouttag' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Un tag</a>
                                     </li>
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:blogs:ajoutcategorie' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Une catégorie</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'blogs:ajoutcategorie' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Une catégorie</a>
                                     </li>
                                     
                                 </ul>
                             </li>
                             <li data-menu=""><a class="dropdown-item" href="#" data-toggle="dropdown" data-i18n="eCommerce"><i class="feather icon-edit-2"></i>Liste</a>
                                 <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:blogs:listearticle' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Des articles</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'blogs:listearticle' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Des articles</a>
                                     </li>
 
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:blogs:listetag' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Des tags</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'blogs:listetag' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Des tags</a>
                                     </li>
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:blogs:listecategorie' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Des catégories</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'blogs:listecategorie' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Des catégories</a>
                                     </li>
                                 </ul>
                             </li>
@@ -177,27 +177,27 @@
                         <ul class="dropdown-menu">
                             <li class="active" data-menu=""><a class="dropdown-item" href="#" data-toggle="dropdown" data-i18n="Analytics"><i class="feather icon-activity"></i>Ajout</a>
                                 <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:shops:ajoutproduit' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Un produit</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'shops:ajoutproduit' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Un produit</a>
                                     </li>
                                     <li data-menu=""><a class="dropdown-item" href="form-select.html" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Un review</a>
                                     </li>
 
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:shops:ajouttag' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Un tag</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'shops:ajouttag' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Un tag</a>
                                     </li>
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:shops:ajoutcategorie' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Une catégorie</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'shops:ajoutcategorie' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Une catégorie</a>
                                     </li>
                                     
                                 </ul>
                             </li>
                             <li data-menu=""><a class="dropdown-item" href="dashboard-ecommerce.html" data-toggle="dropdown" data-i18n="eCommerce"><i class="feather icon-edit-2"></i>Liste</a>
                                 <ul class="dropdown-menu">
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:shops:listeproduit' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Des produits</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'shops:listeproduit' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Des produits</a>
                                     </li>
                                     <li data-menu=""><a class="dropdown-item" href="form-select.html" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Des reviews</a>
                                     </li>
-                                     <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:shops:listetag' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Des tags</a>
+                                     <li data-menu=""><a class="dropdown-item" href="{% url 'shops:listetag' %}" data-toggle="dropdown" data-i18n="Select"><i class="feather icon-circle"></i>Des tags</a>
                                     </li>
-                                    <li data-menu=""><a class="dropdown-item" href="{% url 'gestionadmin:shops:listecategorie' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Des catégories</a>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'shops:listecategorie' %}" data-toggle="dropdown" data-i18n="Switch"><i class="feather icon-circle"></i>Des catégories</a>
                                     </li>
                                 </ul>
                             </li>
@@ -227,11 +227,13 @@
                             </li>
                         </ul>
                     </li>
+                    -->
                 </ul>
+
             </div>
         </div>
     </div>
-    -->
+
     <!-- END: Main Menu-->
 
 
