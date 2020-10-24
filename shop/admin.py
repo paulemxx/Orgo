@@ -122,6 +122,32 @@ class ReviewAdmin(admin.ModelAdmin):
 
 
 
+class CartAdmin(admin.ModelAdmin):
+    list_display = (
+        'auteur',
+        'total',
+        'active',
+        'statut',
+        'date_add',
+        'date_update'
+    )
+    list_filter = (
+        'statut',
+        'date_add',
+        'date_update',
+    )
+    search_fields = (
+        'titre',
+    )
+    list_per_pages = 50
+    date_hierarchy = 'date_add'
+
+    fieldsets = [
+        ('Info ', {'fields': ['auteur','produit','total','active', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
+    ]
+
+
 
 def _register(model, admin_class):
     admin.site.register(model, admin_class)
@@ -131,3 +157,4 @@ _register(models.Produit, ProduitAdmin)
 _register(models.Review, ReviewAdmin)
 _register(models.Tag, TagAdmin)
 _register(models.Categorie, CategorieAdmin)
+_register(models.Cart, CartAdmin)
