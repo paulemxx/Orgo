@@ -37,8 +37,12 @@ def logins(request: HttpRequest) -> HttpResponse:
     password = request.POST.get('password', False)
     user = authenticate(username=username, password=password)
     if user is not None and user.is_active:
-        login(request, user)
-        return redirect('accounts:dashboard')
+        if user in user.groups.filter(name='Utilisateurs'):
+            login(request, user)
+            return redirect('accounts:dashboard')
+        else:
+            login(request, user)
+            return redirect('gestionadmin:index')
 
 
     else:
