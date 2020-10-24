@@ -6,6 +6,11 @@ app_name = 'shop'
 
 urlpatterns = [
 
-    path('', views.index, name='index'),
+    path('ajoutproduit', views.ajoutproduit, name='ajoutproduit'),
+    path('ajoutcategorie', views.ajoutcategorie, name='ajoutcategorie'),
+    path('ajouttag', views.ajouttag, name='ajouttag'),
+    path('listeproduit', views.listeproduit, name='listeproduit'),
+    path('listecategorie', views.listecategorie, name='listecategorie'),
+    path('listetag', views.listetag, name='listetag'),
 
 ]
