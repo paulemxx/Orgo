@@ -7,9 +7,31 @@ from siteConfig.datamanager import mergeData
 
 # Create your views here.
 
-def index(request: HttpRequest) -> HttpResponse:
+
+def ajoutadmin(request: HttpRequest) -> HttpResponse:
+    data = {
+
+    }
+    return render(request, 'pages/administration/users/ajoutadmin.html', mergeData(request, data))
+
+
+def ajoutuser(request: HttpRequest) -> HttpResponse:
     data = {
 
 
     }
-    return render(request, 'pages/administration/index.html', mergeData(request, data))
+    return render(request, 'pages/administration/users/ajoutuser.html', mergeData(request, data))
+
+def listeadmin(request: HttpRequest) -> HttpResponse:
+    data = {
+
+    }
+    return render(request, 'pages/administration/users/listeadmin.html', mergeData(request, data))
+
+
+def listeuser(request: HttpRequest) -> HttpResponse:
+    data = {
+
+
+    }
+    return render(request, 'pages/administration/users/listeuser.html', mergeData(request, data))
