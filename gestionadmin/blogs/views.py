@@ -4,13 +4,14 @@ from django.http.response import HttpResponse, JsonResponse
 from django.http.request import HttpRequest
 from blog import models as blg_models
 from siteConfig.datamanager import mergeData
-
+from django.contrib.auth import models as auth_models
+from django.contrib.auth.models import User
 
 # Create your views here.
 
 def ajoutarticle(request: HttpRequest) -> HttpResponse:
     if request.method == 'POST':
-        auteur = request.POST.get('auteur')
+
         titre = request.POST.get('titre')
         categorie = request.POST.get('categorie')
         tag = request.POST.get('tag')
@@ -20,10 +21,10 @@ def ajoutarticle(request: HttpRequest) -> HttpResponse:
 
         c = blg_models.Article(
 
-            auteur=auteur,
+            auteur = request.user,
             titre=titre,
-            categorie=categorie,
-            tag = tag,
+            categorie_id=int(categorie),
+            tag_id=int(tag),
             contenu=contenu,
             resume=resume,
             cover=cover
@@ -34,6 +35,10 @@ def ajoutarticle(request: HttpRequest) -> HttpResponse:
         return redirect('shop:index')
     else:
         data = {
+            'categories': blg_models.Categorie.objects.filter(statut=True).order_by('-date_add'),
+            'tags': blg_models.Tag.objects.filter(statut=True),
+            'articles': blg_models.Article.objects.filter(statut=True),
+            'auteurs': auth_models.User.objects.all()
 
         }
         return render(request, 'pages/administration/blog/ajoutarticle.html', mergeData(request, data))

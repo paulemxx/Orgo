@@ -55,20 +55,12 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-
-                                            </tr>
+                                        {% for cat in categories %}
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-
+                                                <th scope="row">{{forloop.counter}}</th>
+                                                <td>{{cat.titre}}</td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-
-                                            </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
