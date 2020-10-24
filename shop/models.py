@@ -101,3 +101,25 @@ class Review(models.Model):
 
         return self.titre
 
+class Cart(models.Model):
+    auteur = models.ForeignKey(User, on_delete=models.CASCADE, related_name='useprod')
+    produit = models.ManyToManyField(Produit)
+    total = models.DecimalField(max_digits=100, decimal_places=2, default=0.00)
+    active = models.BooleanField(default=True)
+
+    statut = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+
+    class Meta:
+        verbose_name = 'Cart'
+        verbose_name_plural = 'Carts'
+
+    def __unicode__(self):
+
+        return "Cart id: %s" %(self.id)
+
+    @property
+    def getProduits(self) -> QuerySet:
+        return self.produit.filter(statut=True)
