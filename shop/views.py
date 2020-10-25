@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.http.response import HttpResponse, HttpResponseRedirect
@@ -59,7 +60,7 @@ def cart(request: HttpRequest) -> HttpResponse:
     }
     return render(request, 'pages/shop/cart.html', mergeData(request, data))
 
-
+@login_required(login_url='shop:index')
 def update_cart(request: HttpRequest, titre_slug: str) -> HttpResponse:
 
     global produits
