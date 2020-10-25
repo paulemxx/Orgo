@@ -5,11 +5,12 @@ from django.http.request import HttpRequest
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from . import models
 from siteConfig.datamanager import mergeData
-
 from django.contrib.messages import constants as messages
 
 
 # Create your views here.
+from .models import Produit, Cart
+
 
 def shop(request: HttpRequest) -> HttpResponse:
     data = {
@@ -65,3 +66,26 @@ def cart(request: HttpRequest) -> HttpResponse:
 
     }
     return render(request, 'pages/shop/cart.html', mergeData(request, data))
+
+
+def update_cart(request: HttpRequest, titre_slug: str) -> HttpResponse:
+    cart= Cart.objects.all()
+
+    try:
+        produit = Produit.objects.get(titre_slug=titre_slug)
+    except Produit.DoesNotExist:
+        pass
+    except:
+        pass
+    if not produit in cart.produit.all():
+        cart.produit.add(produit)
+    else:
+        cart.produit.remove(produit)
+    new_total = 0.00
+    for cart in cart:
+        for item in cart.getProduits:
+            new_total += float(item.old_prix)
+    cart.total = new_total
+    cart.save()
+    return HttpResponseRedirect('shop:cart')
+
