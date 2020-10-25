@@ -69,18 +69,18 @@ def cart(request: HttpRequest) -> HttpResponse:
 
 
 def update_cart(request: HttpRequest, titre_slug: str) -> HttpResponse:
-    cart= Cart.objects.all()
+    cart= Cart.objects.filter(statut=True)
 
     try:
-        produit = Produit.objects.get(titre_slug=titre_slug)
+        produit = Produit.objects.get(titre_slug=titre_slug).filter(statut=True)
     except Produit.DoesNotExist:
         pass
     except:
         pass
     if not produit in cart.produit.all():
-        cart.produit.add(produit)
+        cart.produits.add(produit)
     else:
-        cart.produit.remove(produit)
+        cart.produits.remove(produit)
     new_total = 0.00
     for cart in cart:
         for item in cart.getProduits:
