@@ -7,14 +7,12 @@ from . import models
 from siteConfig.datamanager import mergeData
 from django.contrib.messages import constants as messages
 
-
 # Create your views here.
 from .models import Produit, Cart
 
 
 def shop(request: HttpRequest) -> HttpResponse:
     data = {
-
 
         'prod': models.Produit.objects.filter(statut=True).order_by('-date_add')
 
@@ -32,12 +30,11 @@ def product(request: HttpRequest, titre_slug: str) -> HttpResponse:
 
         c = models.Review(
 
-            produit_id = produit_id,
+            produit_id=produit_id,
             nom=nom,
             email=email,
             titre=titre,
             review=review,
-
 
         )
 
@@ -50,10 +47,8 @@ def product(request: HttpRequest, titre_slug: str) -> HttpResponse:
             'tags': models.Tag.objects.filter(statut=True)[:5],
             'prods': models.Produit.objects.filter(statut=True).order_by('date_add')[:3],
 
-
         }
         return render(request, 'pages/shop/shop_details.html', data)
-
 
 
 def cart(request: HttpRequest) -> HttpResponse:
@@ -61,31 +56,35 @@ def cart(request: HttpRequest) -> HttpResponse:
 
         'cart': models.Cart.objects.filter(statut=True),
 
-
-
-
     }
     return render(request, 'pages/shop/cart.html', mergeData(request, data))
 
 
 def update_cart(request: HttpRequest, titre_slug: str) -> HttpResponse:
-    cart= Cart.objects.filter(statut=True)
+
+    global produits
+    cart = Cart.objects.all()
 
     try:
-        produit = Produit.objects.get(titre_slug=titre_slug).filter(statut=True)
+        produits = Produit.objects.get(titre_slug=titre_slug)
     except Produit.DoesNotExist:
         pass
     except:
         pass
-    if not produit in cart.produit.all():
-        cart.produits.add(produit)
-    else:
-        cart.produits.remove(produit)
+
+    for cart in cart:
+        if not produits in cart.getProduits.all():
+            cart.produit.add(produits)
+        else:
+            cart.produit.remove(produits)
+
     new_total = 0.00
     for cart in cart:
-        for item in cart.getProduits:
-            new_total += float(item.old_prix)
-    cart.total = new_total
-    cart.save()
-    return HttpResponseRedirect('shop:cart')
 
+        for item in cart.getProduits:
+           new_total += float(item.old_prix)
+    cart.total = new_total
+    for cart in cart:
+        cart.save()
+
+    return redirect('shop:cart')
