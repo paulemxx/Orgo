@@ -93,39 +93,28 @@
         
 
 
-        <!-- Start Why Choose Area -->
+         <!-- Start Why Choose Area -->
         <section class="why-choose-area pt-100">
             <div class="container">
                 <div class="why-choose-item">
                     <div class="content">
-                        <span>Why Choose Us</span>
-                        <h3>We are Ensure of These Types</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+                        <span>Pourquoi nous ? </span>
+                        {% for ti in titles %}
+                        <h3>{{ti.titre}}</h3>
+                        <p>{{ti.description}}</p>
+                        {% endfor %}
                     </div>
 
+                    {% for ad in avantages %}
                     <div class="inner-content">
                         <div class="icon">
                             <i class="flaticon-leaf"></i>
                         </div>
-                        <h4>Organic</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+                        <h4>{{ad.titre}}</h4>
+                        <p>{{ad.recit}}</p>
                     </div>
+                    {% endfor %}
 
-                    <div class="inner-content">
-                        <div class="icon">
-                            <i class="flaticon-heart"></i>
-                        </div>
-                        <h4>Fast and Easy</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
-                    </div>
-
-                    <div class="inner-content">
-                        <div class="icon">
-                            <i class="flaticon-plant"></i>
-                        </div>
-                        <h4>High Quality</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
-                    </div>
                 </div>
             </div>
         </section>
