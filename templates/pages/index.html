@@ -258,20 +258,23 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="newsletter-content">
-                            <h2>Subscribe To Our Newsletter</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+                            <h2>Souscrivez à Newsletter</h2>
+                            <p>Insérez votre mail pour recvoir toute l'actualité, nos mises à jours.</p>
                         </div>
                     </div>
 
+
                     <div class="col-lg-6">
-                        <form class="newsletter-form">
-                            <input type="email" class="input-newsletter" placeholder="Enter Email Address" name="EMAIL" required autocomplete="off">
+                        <form class="newsletter-form" method="POST">
+                            {% csrf_token %}
+                            <input type="email" class="input-newsletter" name="email" placeholder="Entrez votre adresse mail."  required autocomplete="off">
 
                             <button type="submit">Subscribe Now</button>
                             
                             <div id="validator-newsletter" class="form-result"></div>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -281,25 +284,12 @@
         <div class="partner-area ptb-100">
             <div class="container">
                 <div class="partner-slider owl-carousel owl-theme">
+                    {% for sponsor in sponsors %}
                     <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-1.png' %}" alt="image">
+                        <img src="{{sponsor.cover.url}}" alt="{{sponsor.cover.url}}">
                     </div>
+                    {% endfor %}
 
-                    <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-2.png' %}" alt="image">
-                    </div>
-
-                    <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-3.png' %}" alt="image">
-                    </div>
-
-                    <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-4.png' %}" alt="image">
-                    </div>
-
-                    <div class="partner-item">
-                        <img src="{% static 'assets/img/partner/partner-5.png' %}" alt="image">
-                    </div>
                 </div>
             </div>
         </div>
