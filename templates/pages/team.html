@@ -26,15 +26,16 @@
         <section class="team-area pt-100 pb-70">
             <div class="container">
                 <div class="section-title">
-                    <h2>Our Farm Land Farmers</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
+                    <h2>Notre équipe</h2>
                 </div>
 
                 <div class="row">
+
                     <div class="col-lg-4 col-md-6">
+                        {% for team in teams %}
                         <div class="single-team-box">
                             <div class="image">
-                                <img src="{% static 'assets/img/team/team-1.{% static 'jpg" alt="image">
+                                <img src="{{team.cover.url}}" alt="{{team.cover.url}}">
 
                                 <ul class="social">
                                     <li>
@@ -61,191 +62,15 @@
                             </div>
 
                             <div class="content">
-                                <h3>Alex Maxwel</h3>
-                                <span>CEO & Founder</span>
+                                <h3>{{team.nom}}</h3>
+                                <span>{{team.metier}}</span>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-team-box">
-                            <div class="image">
-                                <img src="{% static 'assets/img/team/team-2.{% static 'jpg" alt="image">
 
-                                <ul class="social">
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-facebook'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-twitter'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-linkedin'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-instagram'></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
 
-                            <div class="content">
-                                <h3>Justin Roberto</h3>
-                                <span>Manager</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-team-box">
-                            <div class="image">
-                                <img src="{% static 'assets/img/team/team-3.{% static 'jpg" alt="image">
-
-                                <ul class="social">
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-facebook'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-twitter'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-linkedin'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-instagram'></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="content">
-                                <h3>Louis Agassiz</h3>
-                                <span>Organic Farmer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-team-box">
-                            <div class="image">
-                                <img src="{% static 'assets/img/team/team-4.{% static 'jpg" alt="image">
-
-                                <ul class="social">
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-facebook'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-twitter'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-linkedin'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-instagram'></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="content">
-                                <h3>Carl Anderson</h3>
-                                <span>Agriculturist</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-team-box">
-                            <div class="image">
-                                <img src="{% static 'assets/img/team/team-5.{% static 'jpg" alt="image">
-
-                                <ul class="social">
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-facebook'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-twitter'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-linkedin'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-instagram'></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="content">
-                                <h3>Kyle Frederick</h3>
-                                <span>Sales Manager</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-team-box">
-                            <div class="image">
-                                <img src="{% static 'assets/img/team/team-6.jpg' %}" alt="image">
-
-                                <ul class="social">
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-facebook'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-twitter'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-linkedin'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-instagram'></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="content">
-                                <h3>Alena Castellon</h3>
-                                <span>Farmer</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
