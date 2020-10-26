@@ -10,7 +10,9 @@ from siteConfig.datamanager import mergeData
 
 def index(request: HttpRequest) -> HttpResponse:
     data = {
-
+        'prods': models.Produit.objects.filter(statut=True).order_by('-date_add')[:4],
+        'articles': models.Article.objects.filter(statut=True),
+        'prod': models.Produit.objects.filter(statut=True).order_by('date_add')[:4],
 
     }
     return render(request, 'pages/index.html', mergeData(request, data))
@@ -25,6 +27,7 @@ def about(request: HttpRequest) -> HttpResponse:
         'chiffres': models.Chiffre.objects.filter(statut=True).order_by('-date_add'),
         'avantages': models.Avantage.objects.filter(statut=True).order_by('-date_add'),
         'titles': models.Title.objects.filter(statut=True).order_by('-date_add'),
+        'teams': models.Team.objects.filter(statut=True).order_by('-date_add'),
 
     }
     return render(request, 'pages/about.html', mergeData(request, data))
@@ -90,7 +93,7 @@ def contact(request: HttpRequest) -> HttpResponse:
     data = {
         'adresses': models.Adresse.objects.filter(statut=True).order_by('-date_add'),
         'calls': models.Call.objects.filter(statut=True).order_by('-date_add'),
-        'Mails': models.Mail.objects.filter(statut=True).order_by('-date_add'),
+        'mails': models.Mail.objects.filter(statut=True).order_by('-date_add'),
 
 
     }
