@@ -32,7 +32,8 @@ def index(request: HttpRequest) -> HttpResponse:
             'news': models.Newsletter.objects.filter(statut=True),
 
             'sponsors': models.Sponsor.objects.filter(statut=True),
-
+            'avantages': models.Avantage.objects.filter(statut=True).order_by('-date_add'),
+            'titles': models.Title.objects.filter(statut=True).order_by('-date_add'),
 
         }
         return render(request, 'pages/index.html', mergeData(request, data))
@@ -48,6 +49,7 @@ def about(request: HttpRequest) -> HttpResponse:
         'avantages': models.Avantage.objects.filter(statut=True).order_by('-date_add'),
         'titles': models.Title.objects.filter(statut=True).order_by('-date_add'),
         'teams': models.Team.objects.filter(statut=True).order_by('-date_add'),
+        'sponsors': models.Sponsor.objects.filter(statut=True),
 
     }
     return render(request, 'pages/about.html', mergeData(request, data))
