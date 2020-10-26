@@ -258,3 +258,18 @@ class Call(models.Model):
     class Meta:
         verbose_name = "Call"
         verbose_name_plural = "Calls"
+
+class Newsletter(models.Model):
+    email = models.EmailField(max_length=255, null=True, blank=True)
+
+    statut = models.BooleanField(default=True)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Newsletter"
+        verbose_name_plural = "Newsletters"
+
+    def __str__(self) -> str:
+        return str(self.email)
+
