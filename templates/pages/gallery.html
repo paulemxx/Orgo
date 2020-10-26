@@ -28,8 +28,9 @@
         <section class="gallery-area pt-100 pb-100">
             <div class="container-fluid">
                 <div class="row">
+                    {% for gallery in gallerys %}
                     <div class="col-lg-6 col-md-6">
-                        {% for gallery in gallerys %}
+
                         <div class="single-gallery-box">
                             <div class="gallery-image">
                                 <a href="#"><img src="{{gallery.cover.url}}" alt="image"></a>
@@ -42,9 +43,9 @@
 
                             </div>
                         </div>
-                        {% endfor %}
-                    </div>
 
+                    </div>
+                    {% endfor %}
 
                 </div>
             </div>
