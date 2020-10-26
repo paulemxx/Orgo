@@ -55,11 +55,15 @@
                         <ul class="top-header-information">
                             <li>
                                 <i class='bx bxs-map'></i>
-                                175 5th Ave Premium Area, New York
+                                {% for ad in adresses %}
+                                {{ad.adress}}
+                                {% endfor %}
                             </li>
                             <li>
                                 <i class='bx bx-envelope'></i>
-                                <a href="mailto:hello@orgo.com">hello@orgo.com</a>
+                                {% for mail in mails %}
+                                <a href="mailto:{{mail.email}}">{{mail.email}}</a>
+                                {% endfor %}
                             </li>
                         </ul>
                     </div>
@@ -110,7 +114,7 @@
             <div class="main-navbar">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{% url 'start:index' %}">
                             <img src="{% static 'assets/img/logo.png' %}" alt="image">
                         </a>
 
@@ -263,13 +267,17 @@
                     <div class="contact-info">
                         <div class="contact-info-content">
                             <h2>
-                                <a href="tel:+0881306298615">
-                                    +088 130 629 8615
+                                 {% for call in calls %}
+                                <a href="tel:{{call.tel}}">
+                                    {{call.tel}}
                                 </a>
+                                {% endfor %}
                                 <span>OR</span>
-                                <a href="mailto:orgo@gmail.com">
-                                    orgo@gmail.com
+                                {% for mail in mails %}
+                                <a href="mailto:{{mail.email}}">
+                                    {{mail.email}}
                                 </a>
+                                {% endfor %}
                             </h2>
 
                             <ul class="social">
@@ -332,7 +340,7 @@
                                     <a href="index.html">Orgo</a>
                                 </h2>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Le meilleur en terme de site E-commerce d'aliments..</p>
                             <ul class="social">
                                 <li>
                                     <a href="#" class="facebook" target="_blank">
@@ -358,85 +366,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h3>Instagram</h3>
 
-                            <ul class="instagram-list">
-                                <li>
-                                    <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram1.jpg' %}" alt="image">
-                                        <i class="bx bxl-instagram"></i>
-                                        <a href="#" target="_blank" class="link-btn"></a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram2.jpg' %}" alt="image">
-                                        <i class="bx bxl-instagram"></i>
-                                        <a href="#" target="_blank" class="link-btn"></a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram3.jpg' %}" alt="image">
-                                        <i class="bx bxl-instagram"></i>
-                                        <a href="#" target="_blank" class="link-btn"></a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram4.jpg' %}" alt="image">
-                                        <i class="bx bxl-instagram"></i>
-                                        <a href="#" target="_blank" class="link-btn"></a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram5.jpg' %}" alt="image">
-                                        <i class="bx bxl-instagram"></i>
-                                        <a href="#" target="_blank" class="link-btn"></a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram6.jpg' %}" alt="image">
-                                        <i class="bx bxl-instagram"></i>
-                                        <a href="#" target="_blank" class="link-btn"></a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram7.jpg' %}" alt="image">
-                                        <i class="bx bxl-instagram"></i>
-                                        <a href="#" target="_blank" class="link-btn"></a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram8.jpg' %}" alt="image">
-                                        <i class="bx bxl-instagram"></i>
-                                        <a href="#" target="_blank" class="link-btn"></a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="box">
-                                        <img src="{% static 'assets/img/instagram/instagram1.jpg' %}" alt="image">
-                                        <i class="bx bxl-instagram"></i>
-                                        <a href="#" target="_blank" class="link-btn"></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
                     <div class="col-lg-3 col-sm-6">
                         <div class="single-footer-widget pl-5">
@@ -444,22 +374,22 @@
     
                             <ul class="quick-links">
                                 <li>
-                                    <a href="#">About Us</a>
+                                    <a href="{% url 'start:about' %}">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="#">Our Services</a>
+                                    <a href="{% url 'start:services' %}">Our Services</a>
                                 </li>
                                 <li>
-                                    <a href="#">Shop</a>
+                                    <a href="{% url 'shop:index' %}">Shop</a>
                                 </li>
                                 <li>
-                                    <a href="#">Blog</a>
+                                    <a href="{% url 'blog:index' %}">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="#">Faq</a>
+                                    <a href="{% url 'start:faq' %}">Faq</a>
                                 </li>
                                 <li>
-                                    <a href="#">Contact</a>
+                                    <a href="{% url 'start:contact' %}">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -472,18 +402,24 @@
                             <ul class="footer-contact-info">
                                 <li>
                                     <i class='bx bxs-phone'></i>
-                                    <span>Phone</span>
-                                    <a href="tel:407409202288">(+40) 74 0920 2288</a>
+                                    {% for call in calls %}
+                                    <span>{{call.titre}}</span>
+                                    <a href="tel:{{call.tel}}">{{call.tel}}</a>
+                                    {% endfor %}
                                 </li>
                                 <li>
                                     <i class='bx bx-envelope'></i>
-                                    <span>Email</span>
-                                    <a href="mailto:hello@orgo.com">hello@orgo.com</a>
+                                    {% for mail in mails %}
+                                    <span>{{mail.titre}}</span>
+                                    <a href="mailto:{{mail.email}}">{{mail.email}}</a>
+                                    {% endfor %}
                                 </li>
                                 <li>
                                     <i class='bx bx-map'></i>
-                                    <span>Address</span>
-                                    175 5th Ave Premium Area, New York, NY 10010, United States
+                                    {% for ad in adresses %}
+                                    <span>{{ad.titre}}</span>
+                                    {{ad.adress}}
+                                    {% endfor %}
                                 </li>
                             </ul>
                         </div>
@@ -501,9 +437,9 @@
                         <div class="col-lg-6 col-md-6">
                             <p>
                                 <i class="far fa-copyright"></i> 
-                                Copyright @2020 Orgo. All Rights Reserved by
+                                Copyright @2020 Orgo. Tous les droits sont réservés par
                                 <a href="https://envytheme.com/" target="_blank">
-                                    EnvyTheme
+                                    Orgo
                                 </a>
                             </p>
                         </div>
