@@ -438,7 +438,7 @@ class CallAdmin(admin.ModelAdmin):
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
-class ServicesAdmin(admin.ModelAdmin):
+class SponsorAdmin(admin.ModelAdmin):
     list_display = (
         'titre',
 
