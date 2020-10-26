@@ -438,6 +438,61 @@ class CallAdmin(admin.ModelAdmin):
         ('Statut et Activations', {'fields': ['statut', ]}),
     ]
 
+class ServicesAdmin(admin.ModelAdmin):
+    list_display = (
+        'titre',
+
+
+        'affiche_image',
+        'statut',
+        'date_add',
+        'date_update'
+    )
+    list_filter = (
+        'statut',
+        'date_add',
+        'date_update',
+    )
+    search_fields = (
+        'titre',
+    )
+    list_per_pages = 50
+    date_hierarchy = 'date_add'
+    readonly_fields = ['affiche_image']
+
+    fieldsets = [
+        ('Info ', {'fields': ['titre',  ]}),
+        ('Image', {'fields': ['cover', 'affiche_image', ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
+    ]
+
+    def affiche_image(self, obj):
+        return mark_safe('<img src="{url}" width="100px" height="50px" />'.format(url=obj.cover.url))
+
+class NewsletterAdmin(admin.ModelAdmin):
+    list_display = (
+        'email',
+
+
+        'statut',
+        'date_add',
+        'date_update'
+    )
+    list_filter = (
+        'statut',
+        'date_add',
+        'date_update',
+    )
+    search_fields = (
+        'email',
+    )
+    list_per_pages = 50
+    date_hierarchy = 'date_add'
+
+    fieldsets = [
+        ('Info ', {'fields': ['email' ]}),
+        ('Statut et Activations', {'fields': ['statut', ]}),
+    ]
 
 
 def _register(model, admin_class):
@@ -458,5 +513,5 @@ _register(models.Adresse, AdresseAdmin)
 _register(models.Mail, MailAdmin)
 _register(models.Call, CallAdmin)
 _register(models.Feedback, FeedbackAdmin)
-
-
+_register(models.Sponsor, SponsorAdmin)
+_register(models.Newsletter, NewsletterAdmin)
