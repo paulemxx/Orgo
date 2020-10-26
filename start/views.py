@@ -9,13 +9,33 @@ from siteConfig.datamanager import mergeData
 
 
 def index(request: HttpRequest) -> HttpResponse:
-    data = {
-        'prods': models.Produit.objects.filter(statut=True).order_by('-date_add')[:4],
-        'articles': models.Article.objects.filter(statut=True),
-        'prod': models.Produit.objects.filter(statut=True).order_by('date_add')[:4],
+    if request.method == 'POST':
 
-    }
-    return render(request, 'pages/index.html', mergeData(request, data))
+        email = request.POST.get('email')
+
+        c = models.Newsletter(
+
+
+            email=email,
+
+
+        )
+
+        c.save()
+        return redirect('start:index')
+    else:
+
+        data = {
+            'prods': models.Produit.objects.filter(statut=True).order_by('-date_add')[:4],
+            'articles': models.Article.objects.filter(statut=True),
+            'prod': models.Produit.objects.filter(statut=True).order_by('date_add')[:4],
+            'news': models.Newsletter.objects.filter(statut=True),
+
+            'sponsors': models.Sponsor.objects.filter(statut=True),
+
+
+        }
+        return render(request, 'pages/index.html', mergeData(request, data))
 
 
 
