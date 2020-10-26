@@ -6,6 +6,10 @@ from . import models
 def getConfig(request: HttpRequest) -> dict:
     data = {
 
+        'adresses': models.Adresse.objects.filter(statut=True).order_by('-date_add'),
+        'calls': models.Call.objects.filter(statut=True).order_by('-date_add'),
+        'mails': models.Mail.objects.filter(statut=True).order_by('-date_add'),
+
     }
 
     return data
