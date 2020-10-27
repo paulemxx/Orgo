@@ -6,7 +6,7 @@ from . import models
 from siteConfig.datamanager import mergeData
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from accounts.forms import RegisterForm
 
 
@@ -36,8 +36,9 @@ def logins(request: HttpRequest) -> HttpResponse:
     username = request.POST.get('username', False)
     password = request.POST.get('password', False)
     user = authenticate(username=username, password=password)
+    g1 = Group.objects.get(name='Utilisateurs')
     if user is not None and user.is_active:
-        if user in user.groups.filter(name='Utilisateurs'):
+        if user in g1:
             login(request, user)
             return redirect('accounts:dashboard')
         else:
