@@ -36,7 +36,7 @@ def register(request: HttpRequest) -> HttpResponse:
         data = {
 
         }
-        return render(request, 'pages/accounts/login.html', mergeData(request, data))
+        return render(request, 'pages/accounts/register.html', mergeData(request, data))
 
 
 
