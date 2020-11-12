@@ -14,22 +14,31 @@ from shop import models
 
 def register(request: HttpRequest) -> HttpResponse:
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            first_name = form.cleaned_data.get('first_name')
-            last_name = form.cleaned_data.get('last_name')
-            email = form.cleaned_data.get('email')
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return HttpResponse('A new user has been successfully registered!')
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        password = request.POST['password']
+        password1 = request.POST['password1']
+        email = request.POST['email']
 
+        if password == password1 :
+            if User.objects.filter(username=username).exists():
+                print("Username pris")
+            elif User.objects.filter(email=email).exists():
+                print("Email pris")
+
+            else :
+                user = User.objects.create_user(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
+                user.save()
+                print("Utilisateur crée")
     else:
-        form = RegisterForm()
 
-    return render(request, 'pages/accounts/register.html', {'form': form})
+        data = {
+
+        }
+        return render(request, 'pages/accounts/login.html', mergeData(request, data))
+
+
 
 
 def logins(request: HttpRequest) -> HttpResponse:
