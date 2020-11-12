@@ -36,7 +36,7 @@ def logins(request: HttpRequest) -> HttpResponse:
     username = request.POST.get('username', False)
     password = request.POST.get('password', False)
     user = authenticate(username=username, password=password)
-    g1 = Group.objects.get(name='Utilisateurs')
+    g1 = Group.objects.get(name="Utilisateurs").user_set.all()
     if user is not None and user.is_active:
         if user in g1:
             login(request, user)
@@ -63,4 +63,3 @@ def dashboard(request: HttpRequest) -> HttpResponse:
 def logouts(request: HttpRequest) -> HttpResponse:
     logout(request)
     return redirect('start:index')
-
