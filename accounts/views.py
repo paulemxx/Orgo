@@ -10,6 +10,7 @@ from django.contrib.auth.models import User, Group
 from accounts.forms import RegisterForm
 from shop import models
 
+
 # Create your views here.
 
 def register(request: HttpRequest) -> HttpResponse:
@@ -21,24 +22,26 @@ def register(request: HttpRequest) -> HttpResponse:
         password1 = request.POST['password1']
         email = request.POST['email']
 
-        if password == password1 :
+        if password == password1:
             if User.objects.filter(username=username).exists():
                 print("Username pris")
             elif User.objects.filter(email=email).exists():
                 print("Email pris")
 
-            else :
-                user = User.objects.create_user(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
+            else:
+                user = User.objects.create_user(username=username, password=password1, email=email,
+                                                first_name=first_name, last_name=last_name)
                 user.save()
                 print("Utilisateur crée")
+                group = Group.objects.get(name='Utilisateurs')
+                user.groups.add(group)
+                return redirect('accounts:login')
     else:
 
         data = {
 
         }
         return render(request, 'pages/accounts/register.html', mergeData(request, data))
-
-
 
 
 def logins(request: HttpRequest) -> HttpResponse:
