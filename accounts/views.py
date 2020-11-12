@@ -8,7 +8,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from accounts.forms import RegisterForm
-
+from shop import models
 
 # Create your views here.
 
@@ -55,6 +55,7 @@ def logins(request: HttpRequest) -> HttpResponse:
 
 def dashboard(request: HttpRequest) -> HttpResponse:
     data = {
+        'prod': models.Produit.objects.filter(statut=True).order_by('-date_add')
 
     }
     return render(request, 'pages/accounts/dashboard.html', mergeData(request, data))
