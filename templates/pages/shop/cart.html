@@ -39,31 +39,33 @@
                                             <th scope="col">Total</th>
                                         </tr>
                                     </thead>
-                                    {% for cart in cart %}
                                     <tbody>
-                                    {% for item in cart.getProduits %}
+                                    {% for item in cart %}
+
+                                    {% with product=item.product %}
                                         <tr>
                                             <td class="product-thumbnail">
                                                 <a href="#">
-                                                    <img src="{{item.cover.url}}" alt="{{item.produit.cover.url}}">
+                                                    <img src="{{product.cover.url}}" alt="{{product.produit.cover.url}}">
                                                 </a>
                                             </td>
                                             <td class="product-name">
-                                                <a href="shop_details.html">{{item.titre}}</a>
+                                                <a href="shop_details.html">{{product.titre}}</a>
                                             </td>
                                             <td class="product-price">
-                                                <span class="unit-amount">{{item.old_prix}}</span>
+                                                <span class="unit-amount">{{product.old_prix}}</span>
                                             </td>
 
                                             <td class="product-subtotal">
-                                                <span class="subtotal-amount">{{item.total}}</span>
-                                                <a href="#" class="remove">
+                                                <span class="subtotal-amount">{{product.total}}</span>
+                                                <a href="{% url 'shop:cart_remove' produit.id %}" class="remove">
                                                     <i class='bx bx-trash'></i>
                                                 </a>
                                             </td>
                                         </tr>
-                                {% endfor %}
+
                                     </tbody>
+                                    {% endwith %}
                                     {% endfor %}
                                 </table>
                             </div>
@@ -88,7 +90,7 @@
                                 <ul>
                                     <li>Total
                                         {% for cart in cart %}
-                                        <span>{{cart.total}}</span>
+                                        <span>{{cart.get_total_price}}</span>
                                         {% endfor %}
                                     </li>
 

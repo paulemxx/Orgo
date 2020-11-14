@@ -58,11 +58,13 @@ def cart(request: HttpRequest) -> HttpResponse:
     data = {
 
         'cart': models.Cart.objects.filter(statut=True),
+        'product': models.Produit.objects.filter(statut=True).order_by('date_add'),
 
     }
     return render(request, 'pages/shop/cart.html', mergeData(request, data))
 
 
+@login_required(login_url='shop:index')
 def cart_add(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Produit, id=product_id)
@@ -75,6 +77,7 @@ def cart_add(request, product_id):
     return redirect('shop:cart')
 
 
+@login_required(login_url='shop:index')
 def cart_remove(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Produit, id=product_id)

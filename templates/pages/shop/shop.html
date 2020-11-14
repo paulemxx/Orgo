@@ -54,7 +54,7 @@
 
                                 <ul class="products-action">
                                     <li>
-                                        <a href="{% url 'shop:update_cart' produit.titre_slug %}" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="flaticon-shopping-cart"></i></a>
+                                        <a href="{% url 'shop:cart_add' produit.id %}" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="flaticon-shopping-cart"></i></a>
                                     </li>
                                     <li>
                                         <a href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="flaticon-heart"></i></a>
