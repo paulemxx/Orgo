@@ -67,9 +67,9 @@
                                                         </div>
                                                         <fieldset class="form-group">
                                                             <select class="form-control" name="categorie" id="basicSelect">
-                                                                <option>IT</option>
-                                                                <option>Blade Runner</option>
-                                                                <option>Thor Ragnarok</option>
+                                                                {% for cat in categories %}
+                                                                <option value="{{cat.id}}">{{cat.titre}}</option>
+                                                                {% endfor %}
                                                             </select>
                                                         </fieldset>
                                                     </div>
@@ -77,18 +77,11 @@
                                                         <div class="text-bold-600 font-medium-2">
                                                             Tag
                                                         </div>
-                                                        <fieldset class="form-group">
+                                                       <fieldset class="form-group">
                                                             <select class="form-control" name="tag" id="countrySelect" multiple="multiple">
-                                                                <option selected="selected">Square</option>
-                                                                <option>Rectangle</option>
-                                                                <option selected="selected">Rombo</option>
-                                                                <option>Romboid</option>
-                                                                <option>Trapeze</option>
-                                                                <option>Triangle</option>
-                                                                <option selected="selected">Polygon</option>
-                                                                <option>Regular polygon</option>
-                                                                <option>Circumference</option>
-                                                                <option>Circle</option>
+                                                                {% for tag in tags %}
+                                                                <option selected="selected" value="{{tag.id}}">{{tag.titre}}</option>
+                                                                {% endfor %}
                                                             </select>
                                                         </fieldset>
                                                     </div>
@@ -165,7 +158,13 @@
                                                             </div>
                                                         </div>
                                                     </section>
-                                                    <img src="..." class="rounded float-right"  name="cover"  alt="...">
+                                                     <div class="col-6">
+                                                        <p class="text-center font-italic mt-5">Veuillez choisir une image</p>
+                                                        <div class="form-group">
+                                                            <input type="file" name="cover" class="form-control btn btn-info mt-1 waves-effect waves-light" name="avatar-file" required="" style="background-color:rgba(247,249,252,0);">
+                                                        </div>
+
+                                                    </div>
                                                    
                                                     <div class="col-md-8 offset-md-4">
                                                         <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
