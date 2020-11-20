@@ -24,7 +24,7 @@ def ajoutarticle(request: HttpRequest) -> HttpResponse:
             auteur = request.user,
             titre=titre,
             categorie_id=int(categorie),
-            tag_id=int(tag),
+
             contenu=contenu,
             resume=resume,
             cover=cover
@@ -32,7 +32,7 @@ def ajoutarticle(request: HttpRequest) -> HttpResponse:
         )
 
         c.save()
-        return redirect('shop:index')
+        return redirect('gestionadmin:index')
     else:
         data = {
             'categories': blg_models.Categorie.objects.filter(statut=True).order_by('-date_add'),
