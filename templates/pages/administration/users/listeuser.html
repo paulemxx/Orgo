@@ -57,30 +57,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                           {% for user in Users %}
+
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>Leanne Graham</td>
-                                                <td>sincere@april.biz</td>
-                                                <td>@mdo</td>
+                                                <th scope="row">{{forloop.counter}}</th>
+                                                <td>{{user.username}}</td>
+                                                <td>{{user.first_name}}</td>
+                                                <td>{{user.last_name}}</td>
+                                                <td>{{user.email}}</td>
+
                                             </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Leanne Graham</td>
-                                                <td>Ervin Howell</td>
-                                                <td>Leanne Graham</td>
-                                                <td>shanna@melissa.tv</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Leanne Graham</td>
-                                                <td>Clementine Bauch</td>
-                                                <td>Leanne Graham</td>
-                                                <td>nathan@yesenia.net</td>
-                                                <td>@twitter</td>
-                                            </tr>
+
+                                        {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
