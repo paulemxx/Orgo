@@ -1,0 +1,92 @@
+{% extends 'bases/baseadmin.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+
+            <div class="content-body">
+                <div id="user-profile">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="profile-header mb-2">
+                                <div class="relative">
+                                    <div class="cover-container">
+                                        <img class="img-fluid bg-cover rounded-0 w-100" src="{% static 'admin/app-assets/images/logo/favicon.ico' %}" alt="User Profile Image">
+                                    </div>
+                                    <div class="profile-img-container d-flex align-items-center justify-content-between">
+                                        <img src="{% static 'admin/app-assets/images/logo/logo-dark.png' %}" class="rounded-circle img-border box-shadow-1" alt="Card image">
+                                        <div class="float-right">
+                                            <button type="button" class="btn btn-icon btn-icon rounded-circle btn-primary mr-1">
+                                                <i class="feather icon-edit-2"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon btn-icon rounded-circle btn-primary">
+                                                <i class="feather icon-settings"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                          <form class="form form-horizontal" method="POST" enctype="multipart/form-data">
+
+                                            <div class="form-body">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>Username</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="text" id="first-name" class="form-control" name="username"  placeholder="{{user.username}}" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>First Name</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="text" id="first-name" class="form-control" name="first_name" placeholder="{{user.first_name}}" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>Last Name</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="text" id="first-name" class="form-control" name="last_name" placeholder="{{user.last_name}}" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>Email</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="email" id="email-id" class="form-control" name="email" placeholder="{{user.email}}" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                </div>
+                                </div>
+                            </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+    <!-- END: Content-->
+{% endblock %}
