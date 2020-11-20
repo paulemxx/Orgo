@@ -22,8 +22,8 @@ def ajoutproduit(request: HttpRequest) -> HttpResponse:
 
 
             titre=titre,
-            categorie=categorie,
-            tag = tag,
+            categorie_id=int(categorie),
+            tag_id=int(tag),
             old_prix=old_prix,
             new_prix=new_prix,
             resume=resume,
@@ -32,9 +32,12 @@ def ajoutproduit(request: HttpRequest) -> HttpResponse:
         )
 
         c.save()
-        return redirect('shop:index')
+        return redirect('gestionadmin:index')
     else:
         data = {
+            'categories': shp_models.Categorie.objects.filter(statut=True).order_by('-date_add'),
+            'tags': shp_models.Tag.objects.filter(statut=True),
+            'produits': shp_models.Produit.objects.filter(statut=True),
 
         }
         return render(request, 'pages/administration/shop/ajoutproduit.html', mergeData(request, data))
@@ -54,6 +57,8 @@ def ajoutcategorie(request: HttpRequest) -> HttpResponse:
     else:
 
         data = {
+            'categories': shp_models.Categorie.objects.filter(statut=True).order_by('-date_add'),
+
 
         }
         return render(request, 'pages/administration/shop/ajoutcategorie.html', mergeData(request, data))
@@ -73,6 +78,7 @@ def ajouttag(request: HttpRequest) -> HttpResponse:
         return redirect('gestionadmin:index')
     else:
         data = {
+            'tags': shp_models.Tag.objects.filter(statut=True),
 
         }
         return render(request, 'pages/administration/shop/ajouttag.html', mergeData(request, data))
